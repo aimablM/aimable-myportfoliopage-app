@@ -4,19 +4,19 @@
         "id": "1",
         "src": "./img/product-chain-1.png",
         "title": "Front-End",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+        "description": "Crafting responsive, intuitive user interfaces using React, JavaScript, HTML, and CSS. Focused on creating seamless user experiences with modern design principles and efficient code."
       },
       {
         "id": "2",
         "src": "./img/tag-1.png",
         "title": "Back-End",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+        "description": "Building server-side applications with Python and Flask. Experience in database design, API integration, and implementing secure user authentication systems."
       },
       {
         "id": "3",
         "src": "./img/feather-pen-2.png",
-        "title": "UI & UX Design",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+        "title": "Full-Stack Integration",
+        "description": "Bridging front-end and back-end technologies to create cohesive, full-stack applications. Skilled in database management and ensuring smooth data flow between client and server."
       },
       {
         "id": "4",

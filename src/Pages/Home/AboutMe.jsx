@@ -9,16 +9,12 @@ export default function AboutMe() {
             <p className="section--title">About</p>
             <h1 className="skills-section--heading">About Me</h1>
             <p className="hero--section-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-              officiis sit debitis omnis harum sed veniam quasi dicta accusamus
-              recusandae? Voluptatem, reprehenderit alias? Eligendi aperiam
-              tempora numquam sint odit optio.
+            As a Computer Science student at Towson University, I combine academic excellence with practical development experience. Maintaining a 3.69 GPA while actively participating in the Honors College, I've consistently demonstrated my commitment to mastering both theoretical concepts and practical applications in technology.
             </p>
             <p className="hero--section-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-              officiis sit debitis omnis harum sed veniam quasi dicta accusamus
-              recusandae?
+            My journey in software development is driven by a passion for creating solutions that make a difference. From optimizing database queries to crafting intuitive user interfaces, I approach each project as an opportunity to learn and innovate.
             </p>
+            <p className="hero--section-description">When I'm not coding, you'll find me exploring new technologies, working on my car or helping out somebody. My multilingual background (English, French, and Kinyarwanda) brings a unique perspective to my work and enables effective collaboration in diverse team settings.</p>
           </div>
         </div>
       </section>

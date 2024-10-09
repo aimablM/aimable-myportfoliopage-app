@@ -93,6 +93,26 @@ p {
   color: var(--github);
   background-color: var(--white);
 }
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+  padding-top: 10px;
+  height: 40px; /* Match this to your button height */
+  width: 40px; /* Makes it square, adjust as needed */
+  border-radius: 8px; /* Match your button border-radius */
+  background-color: #ffffff; /* Or match your button background */
+  border: 1px solid #e5e7eb; /* Or match your button border */
+  color: #374151; /* Icon color */
+  transition: all 0.3s ease;
+}
+
+.btn-icon:hover {
+  background-color: #f3f4f6; /* Or match your button hover state */
+  color: #111827;
+}
 /* Global CSS Ends */
 /* Main Headings */
 
