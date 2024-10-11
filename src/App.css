@@ -17,14 +17,56 @@ p {
   margin: 0;
 }
 :root {
-  --primary: #5e3bee;
-  --heading-color: #282938;
-  --bg-shade: #f5fcff;
-  --github: #e62872;
-  --darkblue: #1c1e53;
-  --black: #000000;
-  --white: #ffffff;
+  --primary: #6CB4EE; /* Change the primary color to light blue */
+  --heading-color: #282938; /* Retain this for contrast */
+  --bg-shade: #f5fcff; /* Soft background shade that works well with light blue */
+  --github: #e62872; /* You can keep this if it's part of your branding */
+  --darkblue: #1c1e53; /* A complementary dark blue */
+  --black: #000000; /* Keep black for darker elements */
+  --white: #ffffff; /* Keep white for light contrast */
 }
+
+.hero--button--container {
+  display: inline-flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  height: 53px;
+  gap: 35px;
+}
+
+.hero--socials--container .btn {
+  background-color: transparent !important;  /* Make background fully transparent */
+  border: none !important;                   /* Remove borders */
+  box-shadow: none !important;               /* Remove any box shadows */
+  padding: 0;                                /* Remove padding for full image control */
+}
+
+.hero--socials--container {
+  display: flex;      
+  justify-content: right;          
+  margin-left: 220px;
+  gap: 30px;                         
+}
+
+.btn-socials {
+  border: none;                       /* No padding to ensure image fits */
+  display: flex;                     /* Use Flexbox for button content */
+  align-items: center;               /* Center the image vertically */
+  justify-content: center;          /* Center the image horizontally */
+  background-color: transparent;     /* No background */
+  border: none;                      /* No border */
+  cursor: pointer;                   /* Pointer cursor on hover */
+  padding: 0; 
+}
+
+.btn-socials img {
+  height: 45px;                      /* Set desired height for the images */
+  width: auto;                       /* Maintain aspect ratio */
+  max-width: 100%;                   /* Prevent overflow */ 
+ 
+}
+
+
 .btn {
   font-family: "Roboto";
   display: inline-block;
@@ -47,6 +89,8 @@ p {
   -ms-transition: background-color 0.5s;
   -o-transition: background-color 0.5s;
 }
+
+
 .btn-outline-primary {
   color: var(--primary);
   background-color: var(--white);
@@ -67,12 +111,7 @@ p {
   background-color: var(--white);
 }
 
-.btn-resume {
-  color: var(--white);
-  background-color: var(--primary);
-  border: 1px solid var(--primary);
-  margin-left: 20px;
-}
+
 .btn-resume:hover {
   color: var(--primary);
   background-color: var(--white);
@@ -165,7 +204,7 @@ h2 {
 /* Skills & About Me */
 .section--title {
   color: var(--heading-color);
-  font-size: 21px;
+  font-size: 25px;
   text-align: center;
   font-style: normal;
   font-weight: 600;
@@ -223,7 +262,7 @@ h2 {
 .hero--section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 133.333px 85.333px 133.333px;
+  padding: 75px 90px 133.333px;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
@@ -254,12 +293,22 @@ h2 {
 .hero--section--title--color {
   color: var(--primary);
 }
-.hero--section-description {
+.hero--section--description {
   color: var(--darkblue);
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
-  line-height: 36px;
+  line-height: 32px;
+  border: 2px black;
 }
+
+.hero--aboutme--description {
+  color: var(--darkblue);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 32px;
+  border: 2px black;
+}
+
 .hero--section--img {
   display: flex;
 }
@@ -339,6 +388,13 @@ h2 {
   gap: 32px;
   align-self: stretch;
 }
+/* 
+
+*/
+
+
+
+
 .skills--section--title {
   color: var(--heading-color);
   font-size: 32px;

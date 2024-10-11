@@ -4,48 +4,59 @@
         "id": "1",
         "src": "./img/product-chain-1.png",
         "title": "Front-End",
-        "description": "Crafting responsive, intuitive user interfaces using React, JavaScript, HTML, and CSS. Focused on creating seamless user experiences with modern design principles and efficient code."
+        "description": "Experience with React, JavaScript, HTML, and CSS. Building responsive interfaces and learning modern design principles for engaging user experiences."
       },
       {
         "id": "2",
         "src": "./img/tag-1.png",
         "title": "Back-End",
-        "description": "Building server-side applications with Python and Flask. Experience in database design, API integration, and implementing secure user authentication systems."
+        "description": "Familiar with Python and Flask for server-side programming. Learning to create APIs and work with SQLite databases for effective data management."
       },
       {
         "id": "3",
         "src": "./img/feather-pen-2.png",
         "title": "Full-Stack Integration",
-        "description": "Bridging front-end and back-end technologies to create cohesive, full-stack applications. Skilled in database management and ensuring smooth data flow between client and server."
+        "description": "Academic experience in Python, JavaScript, Java, and C/C++. Eager to apply these languages in practical, real-world projects."
       },
       {
         "id": "4",
         "src": "./img/feather-pen-1.png",
-        "title": "Webflow Development",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+        "title": "Computer Science Fundamentals",
+        "description": "Strong foundation in data structures and algorithms through coursework. Excited to apply these concepts to solve complex problems in software development."
+      },{
+        "id": "5",
+        "src": "./img/version-control-icon.png",
+        "title": "Version Control & Collaboration",
+        "description": "Basic proficiency with Git and GitHub. Keen to gain more experience in collaborative development environments and best practices."
+      },
+      {
+        "id": "6",
+        "src": "./img/soft-skills-icon.png",
+        "title": "Soft Skills",
+        "description": "Strong problem-solving abilities, effective communication (including multilingual capabilities), and enthusiasm for learning new technologies and methodologies."
       }
     ],
     "portfolio": [
       {
         "id": "1",
         "src": "./img/placeholder-image.png",
-        "title": "Ahuse",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-        "link": "View In Github"
+        "title": "TrackXpense- Full-Stack Expense Tracker (In Progress)",
+        "description": "A web application for personal finance management, built with Python/Flask (backend) and HTML/CSS (frontend). Features include user authentication, expense logging, and basic budget planning. Uses SQLite for data storage and implements RESTful APIs for frontend-backend communication.",
+        "link": "https://github.com/aimablM/TrackExpenseApp"
       },
       {
         "id": "2",
         "src": "./img/placeholder-image-1.png",
-        "title": "App Dashboard",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-        "link": "View In Github"
+        "title": "E-Commerce WebApp",
+        "description": "An online store prototype developed using HTML, CSS, and JavaScript. Includes a functional shopping cart with real-time updates, a basic product catalog, and simulated order processing. Utilizes local storage to maintain cart data between sessions.",
+        "link": "https://github.com/aimablM/E-Commerce-Store-Project"
       },
       {
         "id": "3",
         "src": "./img/placeholder-image-2.png",
-        "title": "Easy Rentn",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-        "link": "View In Github"
+        "title": "Personal Portfolio Website",
+        "description": "A responsive portfolio site created with React and Node.js. Showcases projects and skills using a component-based structure for easier maintenance. Designed to be viewable on various devices, presenting professional information in a clear, accessible format.",
+        "link": "https://github.com/aimablM/aimable-myportfoliopage"
       }
     ],
     "testimonial": [
