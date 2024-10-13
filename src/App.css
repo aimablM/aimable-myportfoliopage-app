@@ -918,16 +918,11 @@ input[type="checkbox"] {
 
 @media screen and (max-width: 600px) {
 
-   .about--section{
-    padding: 12%;
-  }
-
-  .skills--section{
+   .about--section ,.skills--section, .portfolio--section, .contact--section{
     padding: 12%;
   }
 
   .navbar {
-   
     padding: 5px 50.333px;
   }
 
