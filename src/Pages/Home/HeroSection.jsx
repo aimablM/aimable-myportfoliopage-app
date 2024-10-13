@@ -19,7 +19,9 @@ export default function HeroSection() {
           
           <div className="hero--button--container">
             <button className="btn btn-primary ">Get In Touch</button>
-              <button className="btn btn-primary">Resume</button>
+              <button onClick={() => {
+                  window.open("./resume.pdf", '_blank', 'noopener noreferrer')
+                }}   className="btn btn-primary">Resume</button>
       
               <div className="hero--socials--container">
                 <button onClick={() => {
