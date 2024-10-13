@@ -95,7 +95,7 @@ function Navbar() {
             <Link
               onClick={() => {
                 closeMenu();
-                window.open("/public/resume.pdf"); // Replace with the actual path to resume file
+                window.open("./resume.pdf"); // Replace with the actual path to resume file
               }}
               activeClass="navbar--active-content"
               spy={true}

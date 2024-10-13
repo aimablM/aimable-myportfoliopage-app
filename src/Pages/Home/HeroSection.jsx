@@ -1,3 +1,5 @@
+import { Link } from "react-scroll";
+
 export default function HeroSection() {
     return (
       <section id="heroSection" className="hero--section">
@@ -18,12 +20,21 @@ export default function HeroSection() {
           </div>
           
           <div className="hero--button--container">
-            <button className="btn btn-primary ">Get In Touch</button>
+            
+            <div className="hero--container--one">
+            
+            <button className="btn btn-primary ">
+        
+                Get In Touch
+
+              </button>
+            
               <button onClick={() => {
                   window.open("./resume.pdf", '_blank', 'noopener noreferrer')
                 }}   className="btn btn-primary">Resume</button>
-      
-              <div className="hero--socials--container">
+            </div>
+
+              <div className="hero--container--two">
                 <button onClick={() => {
                   window.open("https://linkedin.com/in/aimable-m-920608107", '_blank', 'noopener noreferrer')
                 }} className="btn btn-primary btn-socials"><img src="/img/linkedin.png" alt="LinkedIn" /></button>
@@ -36,13 +47,13 @@ export default function HeroSection() {
                 }} className="btn btn-primary btn-socials">
             <img src="/img/twitter.png" alt="Twitter" /></button>
               </div>
-                
+
     
           </div>
         </div>
         
         <div className="hero--section--image">
-          <img src="./img/hero_img.png" alt="Hero Section" />
+          <img src="./img/hero_img.png" alt="Hero Section" className="hero--img"/>
         </div>
       </section>
     );

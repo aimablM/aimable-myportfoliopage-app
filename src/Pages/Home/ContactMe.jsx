@@ -8,7 +8,7 @@ export default function ContactMe() {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, odit.
           </p>
         </div>
-        <form className="contact--form--container">
+        <form action="https://formspree.io/f/mzzbbdgy" method="post" className="contact--form--container">
           <div className="container">
             <label htmlFor="first-name" className="contact--label">
               <span className="text-md">First Name</span>
@@ -74,7 +74,7 @@ export default function ContactMe() {
             <span className="text-sm">I accept the terms</span>
           </label>
           <div>
-            <button className="btn btn-primary contact--form--btn">Submit</button>
+            <button className="btn btn-primary contact--form--btn" name="submit">Submit</button>
           </div>
         </form>
       </section>

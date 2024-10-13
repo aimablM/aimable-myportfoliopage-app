@@ -27,26 +27,39 @@ p {
 }
 
 .hero--button--container {
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
   margin-top: 32px;
   height: 53px;
   gap: 20px;
 }
 
-.hero--socials--container .btn {
+.hero--container--two .btn {
   background-color: transparent !important;  /* Make background fully transparent */
   border: none !important;                   /* Remove borders */
   box-shadow: none !important;               /* Remove any box shadows */
   padding: 0;                                /* Remove padding for full image control */
+  margin-right: 20px;
 }
 
-.hero--socials--container {
-  display: flex;      
+.hero--container--two {
+  display: block;      
   justify-content: right;          
-  margin-left: 220px;
   gap: 30px;                         
 }
+
+.hero--container--one .btn {
+  margin-right: 20px;                     
+}
+
+
+.hero--container--one {
+display: block;
+justify-content: space-between;
+justify-content: left;
+}
+
+
 
 .btn-socials {
   border: none;                       /* No padding to ensure image fits */
@@ -262,7 +275,7 @@ h2 {
 .hero--section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 75px 90px 133.333px;
+  padding: 155px 90px 133.333px;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
@@ -285,7 +298,7 @@ h2 {
 }
 .hero--section--title {
   color: var(--heading-color);
-  font-size: 72px;
+  font-size: 70px;
   font-weight: 700;
   line-height: 90px;
   align-self: stretch;
@@ -834,4 +847,51 @@ input[type="checkbox"] {
   }
 }
 
+@media screen and (max-width: 900px) {
+  
+  .hero--section {
+    display: flex;
+    flex-direction: column-reverse;
+  padding: 133px 50px 133.333px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  background-color: var(--bg-shade);
+  }
+
+
+  .hero--img{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .hero--container--one, .hero--container--two{
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .hero--button--container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 30px;
+  }
+
+}
+
+@media screen and (max-width: 1700px) {
+  
+  .hero--container--one, .hero--container--two{
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .hero--button--container {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+}
 /* Responsive Screens Ends*/
