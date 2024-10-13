@@ -33,7 +33,7 @@ function Footer() {
                 to="MyPortfolio"
                 className="text-md"
               >
-                Portfolio
+                Projects
               </Link>
             </li>
             <li>
@@ -51,7 +51,7 @@ function Footer() {
             </li>
             <li>
               <Link
-                activeClass="navbar--active-content"
+              activeClass="navbar--active-content"
                 spy={true}
                 smooth={true}
                 offset={-70}
@@ -62,19 +62,7 @@ function Footer() {
                 Contact
               </Link>
             </li>
-            <li>
-              <Link
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="testimonial"
-                className="text-md"
-              >
-                Resume
-              </Link>
-            </li>
+
           </ul>
         </div>
         <div className="footer--social--icon">

@@ -23,11 +23,16 @@ export default function HeroSection() {
             
             <div className="hero--container--one">
             
-            <button className="btn btn-primary ">
-        
-                Get In Touch
-
-              </button>
+            <Link
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+        to="Contact"
+        className="btn btn-primary"
+      >
+        Get In Touch
+      </Link>
             
               <button onClick={() => {
                   window.open("./resume.pdf", '_blank', 'noopener noreferrer')
