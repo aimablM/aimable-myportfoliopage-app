@@ -5,7 +5,7 @@ export default function ContactMe() {
           <p className="sub--title">Get In Touch</p>
           <h2>Contact Me</h2>
           <p className="text-lg">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. In, odit.
+            Let's connect! Reach out to discuss projects, opportunities, or just say hi!
           </p>
         </div>
         <form action="https://formspree.io/f/mzzbbdgy" method="post" className="contact--form--container">

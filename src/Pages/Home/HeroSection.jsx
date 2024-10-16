@@ -35,7 +35,7 @@ export default function HeroSection() {
       </Link>
             
               <button onClick={() => {
-                  window.open("./resume_coming soon.png", '_blank', 'noopener noreferrer')
+                  window.open("./current_resume.pdf", '_blank', 'noopener noreferrer')
                 }}   className="btn btn-primary">Resume</button>
             </div>
 
