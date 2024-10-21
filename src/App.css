@@ -412,6 +412,10 @@ h2 {
   gap: 32px;
   align-self: stretch;
 }
+
+.skills--section--img img{
+  width: 54px;
+}
 /* 
 
 */

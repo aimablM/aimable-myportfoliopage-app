@@ -25,13 +25,13 @@
         "description": "Strong foundation in data structures and algorithms through coursework. Excited to apply these concepts to solve complex problems in software development."
       },{
         "id": "5",
-        "src": "./img/version-control-icon.png",
+        "src": "./img/backend.png",
         "title": "Version Control & Collaboration",
-        "description": "Basic proficiency with Git and GitHub. Keen to gain more experience in collaborative development environments and best practices."
+        "description": "Proficiency version control tools such as Git, GitHub and Bitbucket. Keen to gain more experience in collaborative development environments and best practices."
       },
       {
         "id": "6",
-        "src": "./img/soft-skills-icon.png",
+        "src": "./img/translate.png",
         "title": "Soft Skills",
         "description": "Strong problem-solving abilities, effective communication (including multilingual capabilities), and enthusiasm for learning new technologies and methodologies."
       }
@@ -39,21 +39,21 @@
     "portfolio": [
       {
         "id": "1",
-        "src": "./img/placeholder-image.png",
+        "src": "./img/trackxpense.png",
         "title": "TrackXpense- Full-Stack Expense Tracker (In Progress)",
         "description": "A web application for personal finance management, built with Python/Flask (backend) and HTML/CSS (frontend). Features include user authentication, expense logging, and basic budget planning. Uses SQLite for data storage and implements RESTful APIs for frontend-backend communication.",
         "link": "https://github.com/aimablM/TrackExpenseApp"
       },
       {
         "id": "2",
-        "src": "./img/placeholder-image-1.png",
+        "src": "./img/ecommerce.png",
         "title": "E-Commerce WebApp",
         "description": "An online store prototype developed using HTML, CSS, and JavaScript. Includes a functional shopping cart with real-time updates, a basic product catalog, and simulated order processing. Utilizes local storage to maintain cart data between sessions.",
         "link": "https://github.com/aimablM/E-Commerce-Store-Project"
       },
       {
         "id": "3",
-        "src": "./img/placeholder-image-2.png",
+        "src": "./img/portfoliotemplate.jpg",
         "title": "Personal Portfolio Website",
         "description": "A responsive portfolio site created with React and Node.js. Showcases projects and skills using a component-based structure for easier maintenance. Designed to be viewable on various devices, presenting professional information in a clear, accessible format.",
         "link": "https://github.com/aimablM/aimable-myportfoliopage"
