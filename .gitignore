@@ -46,5 +46,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# infrastructure
-/.terraform
+# Terraform ignores
+.terraform/
+*.tfstate
+*.tfstate.backup
+crash.log
+*.tfvars
