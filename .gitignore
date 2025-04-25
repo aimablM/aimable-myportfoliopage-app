@@ -47,7 +47,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Terraform ignores
-.terraform/
+.terraform
 *.tfstate
 *.tfstate.backup
 crash.log
