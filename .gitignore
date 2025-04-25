@@ -52,3 +52,5 @@ yarn-error.log*
 *.tfstate.backup
 crash.log
 *.tfvars
+.terraform/
+infra/.terraform/
