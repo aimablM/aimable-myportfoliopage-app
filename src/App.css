@@ -309,7 +309,7 @@ h2 {
 }
 .hero--section--title {
   color: var(--heading-color);
-  font-size: 70px;
+  font-size: 60px;
   font-weight: 700;
   line-height: 90px;
   align-self: stretch;
@@ -419,9 +419,6 @@ h2 {
 /* 
 
 */
-
-
-
 
 .skills--section--title {
   color: var(--heading-color);

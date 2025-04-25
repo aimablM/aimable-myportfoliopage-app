@@ -8,14 +8,13 @@ export default function HeroSection() {
             <p className="section--title">Hey, I'm Aimable</p>
             <h1 className="hero--section--title">
               <span className="hero--section--title--color">
-              Aspiring Cloud | Software Engineer
+              Aspiring Cloud | DevOps Engineer
               </span>{" "}
               <br />
-              Computer Science Student
+              Turning code into containers and pipelines into production.
             </h1>
             <p className="hero--section--description">
-            Transforming complex problems into elegant code solutions. 
-              Passionate Towson University senior ready to innovate and make a lasting impact in the world of software engineering.
+            Modern applications demand more than code — they need robust, automated, and secure infrastructure. That’s what I build. My goal isn’t just to deploy — it’s to design cloud systems that can evolve, scale, and last.
             </p>
           </div>
           
