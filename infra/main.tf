@@ -72,14 +72,6 @@ resource "aws_security_group" "web_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-  # ingress {
-  #   description = "Allow traffic to port 3000 for testing" 
-  #   from_port   = 3000
-  #   to_port     = 3000
-  #   protocol    = "tcp"
-  #   cidr_blocks = ["0.0.0.0/0"]
-  # }
-
   egress {
     description = "Allow all outbound"
     from_port   = 0

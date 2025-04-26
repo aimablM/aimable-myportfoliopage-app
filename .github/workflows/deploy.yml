@@ -1,7 +1,4 @@
-# This workflow deploys a Dockerized application to an AWS EC2 instance using GitHub Actions.
-# It builds the Docker image, pushes it to Amazon ECR, and then SSHs into the EC2 instance to pull and run the new image.
-# The workflow is triggered on pushes to the main branch.
-
+# This is a GitHub Actions workflow file that automates the deployment of a Dockerized application to an AWS EC2 instance.
 name: Deploy My Cloud Portfolio to AWS EC2 Instance
 
 on:
@@ -30,8 +27,8 @@ jobs:
 
       - name: Build, Tag, and Push Docker image to ECR
         run: |
-         docker build -t ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:latest .
-         docker push ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:latest
+          docker build -t ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:latest .
+          docker push ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:latest
 
       - name: SSH into EC2 and update container
         uses: appleboy/ssh-action@v0.1.7
@@ -45,4 +42,3 @@ jobs:
             docker stop portfolio-container || true
             docker rm portfolio-container || true
             docker run -d --name portfolio-container --restart unless-stopped -p 3000:80 ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:latest
-
