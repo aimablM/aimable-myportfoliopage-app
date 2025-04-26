@@ -29,6 +29,10 @@ jobs:
         run: |
           docker build -t portfolio .
 
+      - name: Check if Docker image build was successful
+        run: |
+          docker images
+
       - name: Tag Docker image for ECR
         run: |
           docker tag portfolio:latest ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:latest
