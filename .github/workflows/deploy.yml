@@ -1,5 +1,4 @@
-# .github/workflows/deploy.yml
-name: Deploy My Cloud Portfolio to AWS EC2 Instance
+name: Deploy My Cloud Portfolio to AWS EC2 Instance (Debug Version)
 
 on:
   push:
@@ -11,52 +10,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Configure AWS credentials
+      - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: us-east-1
 
       - name: Login to Amazon ECR
         run: |
-          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.ECR_REGISTRY }}
+          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 054037110265.dkr.ecr.us-east-1.amazonaws.com
 
-      - name: Build Docker image
+      - name: Build Docker Image (Hardcoded)
         run: |
-          docker build -t portfolio .
+          docker build -t 054037110265.dkr.ecr.us-east-1.amazonaws.com/portfolio:latest .
 
-      - name: Check if Docker image build was successful
+      - name: Push Docker Image to ECR (Hardcoded)
         run: |
-          docker images
+          docker push 054037110265.dkr.ecr.us-east-1.amazonaws.com/portfolio:latest
 
-      - name: Tag Docker image for ECR
-        run: |
-          docker tag portfolio:latest ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:latest
-
-      - name: Push Docker image to ECR
-        run: |
-          docker push ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:latest
-
-      - name: SSH into EC2 and update container
+      - name: SSH into EC2 and Deploy New Container
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.EC2_PUBLIC_IP }}
           username: ubuntu
           key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
           script: |
-            # Login to ECR on EC2
-            aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.ECR_REGISTRY }}
-
-            # Pull the latest image
-            docker pull ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:latest
-
-            # Stop and remove existing container if it exists
+            aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 054037110265.dkr.ecr.us-east-1.amazonaws.com
+            docker pull 054037110265.dkr.ecr.us-east-1.amazonaws.com/portfolio:latest
             docker stop portfolio-container || true
             docker rm portfolio-container || true
-
-            # Run new container
-            docker run -d --name portfolio-container --restart unless-stopped -p 3000:80 ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:latest
+            docker run -d --name portfolio-container --restart unless-stopped -p 3000:80 054037110265.dkr.ecr.us-east-1.amazonaws.com/portfolio:latest
