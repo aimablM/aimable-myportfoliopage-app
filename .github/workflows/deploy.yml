@@ -37,7 +37,31 @@ jobs:
         with:
           host: ${{secrets.EC2_PUBLIC_IP}}
           username: ubuntu
-          key: ${{secrets.EC2_SSH_PRIVATE_KEY}}
+          key: MIIEpAIBAAKCAQEAvNvFK1vvGT+f41hTeDmjhoWkxp4Ro2g2ZrAWYsq9lIsJtxmT
+            HUu2H/ovaXZhcuOQpN1gTj7+aZeGUyC47zXg5+uB+cPAusUkUYzkrSJabDh+/MmH
+            wLuBL/BtSDlFhevVQv2B+RcydNbtRhokqw/QxIMc2fz/hlIpyu8LtNNmx+XW1R4L
+            1tHfPqFNRJsuh1uxVg7poF11/UkfY/M84XH7augBRqnJthhRRPsrfKaAEztogzh1
+            S2+79Ora5iCcvXRlGV5CAAt5VyLUETDdg9hBX7xYYOdw4pVsBUpDgbg+m6gI3NBg
+            g1R4DnpKOoDQtJ+NIcT51u26pw6mu6Gih0grswIDAQABAoIBAEfvojuwyfMhFALh
+            yvF5avs7fpcU8H0AnfAhVHWO6gVhrHKs8Cdxhk7J2jNenyHG4nqZxCwpvHh1+flB
+            9o9PQ3qzbw+263t4yiux8gyskCq2nlAlZ2sXQM8E0mt3PS8UtGfO7in2FwcAMuLH
+            5H2wCYJAusWho6cDNt4QjbHz8CtljhcbVh0rzDAC7YOjl2S9M+zbjQudBv1jMCZB
+            c6tdhJWN1qLh0+Hda22zm3i2Ckd8fN5BOW0/pbgAehvYLQkX6kmNochlE50ohevW
+            kkEeM0C0LifY2UNtiz+x+0VO08z0fLDK1KFmV0egYTlwXxAknZIWcJ9iG/E6vumn
+            5Tk5rSkCgYEA30XV9dtNKPePNFusPSf1+P6IwcbTY/WoNOo7PORYh1dPpaUs0cd6
+            3UkDU06XWF+EppxIuLNciXrs2417miXS0LExDmOPH5HMlq+KV33sjqWmmtGUNmsC
+            eEaxZXdqcdf4XiAr1w79PvbPqf/k12ouZ7VuuR86nfA1q9LGfy/9KvUCgYEA2IqP
+            UOnugtGwUa0/RXYy4NwGvG9y4zXtyyGPH6NVfN1PZpDRmLyGkhzbK1C8qZv0fW5Q
+            al+ZVdHI5R7X7aYCalscv7T8n1GtdZDcOpwXxWcN9+6bHbVva9cn6sty7Chg+4t5
+            W7lo3X5YR0HC4xVDDVY6BfUMg3J4IPZicjO6owcCgYBEn6NOiJPjpos2TYLX3SNl
+            313LKUAptgR4FxIT+h8XogdR4z2uUIB76QgDn+E2gU01JE3Zrw8fFlAcfxThYQS1
+            rfBk+savrlFScyuzDnoZseJOLWI/g45jx16Y0CZATWACFiNDW1EM/DEBkCwW5YTT
+            zVj1vxp2FrF4WTU3PFm0zQKBgQCaUKQxlYRT1ftBOaWNat53QFXMk9/b6+K6j//f
+            HBcgFNcw0KONpUyBc+78v1yzwmBJwwOrytULQ6VXItPemB/Ai43BUMl3AE4NKl7H
+            pdWK6BYcSf5g/ZuZzoqz2KjdgykaGhsyMr94mUFwBn1MNyrBpmFTPX7dbgYN94fQ
+            uuyWoQKBgQCKOecnBo6oJFh/BXgdDKsSHketyxT/6yR6iwKrW7WLPDJY4pLsUeEe
+            zOa6ww3fd7lXfbahiX5m1c/gjA934ZuhAWuShG/MU6pv8qgNCtpypJR7CjIiXzaU
+            NT3d6NFwyUyOxSy19qxqEzi+MPL9gvBlLnhiJiY/UbiDpAdK8dXDrw==
           script: |
             aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 054037110265.dkr.ecr.us-east-1.amazonaws.com
             docker pull 054037110265.dkr.ecr.us-east-1.amazonaws.com/portfolio:latest
