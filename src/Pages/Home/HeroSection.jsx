@@ -8,7 +8,7 @@ export default function HeroSection() {
             <p className="section--title">Hey, I'm Aimable</p>
             <h1 className="hero--section--title">
               <span className="hero--section--title--color">
-              Aspiring Cloud | DevOps Engineer
+              Cloud | DevOps Engineer
               </span>{" "}
               <br />
               Turning code into containers and pipelines into production.
