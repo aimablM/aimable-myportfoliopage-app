@@ -1,4 +1,4 @@
-name: Deploy My Cloud Portfolio to AWS EC2 Instance
+name: Deploy My Cloud Portfolio to AWS EC2 Instance (Debug Version)
 
 on:
   push:
@@ -18,17 +18,17 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ secrets.AWS_REGION }}
+          aws-region: us-east-1
 
       - name: Login to Amazon ECR
         run: |
-          aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.ECR_REGISTRY }}
+          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 054037110265.dkr.ecr.us-east-1.amazonaws.com
 
-      - name: Build Docker Image
+      - name: Build Docker Image (Hardcoded)
         run: |
           docker build -t ${{secrets.ECR_REGISTRY}}/${{secrets.ECR_REPOSITORY}}:latest .
 
-      - name: Push Docker Image to ECR
+      - name: Push Docker Image to ECR (Hardcoded)
         run: |
           docker push ${{secrets.ECR_REGISTRY}}/${{secrets.ECR_REPOSITORY}}:latest
 
@@ -39,8 +39,8 @@ jobs:
           username: ubuntu
           key: ${{secrets.EC2_SSH_PRIVATE_KEY}}
           script: |
-            aws ecr get-login-password --region ${{secrets.AWS_REGION}} | docker login --username AWS --password-stdin ${{secrets.ECR_REGISTRY}}
-            docker pull ${{secrets.ECR_REGISTRY}}/${{secrets.ECR_REPOSITORY}}:latest
+            aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 054037110265.dkr.ecr.us-east-1.amazonaws.com
+            docker pull 054037110265.dkr.ecr.us-east-1.amazonaws.com/portfolio:latest
             docker stop portfolio-container || true
             docker rm portfolio-container || true
-            docker run -d --name portfolio-container --restart unless-stopped -p 3000:80 ${{secrets.ECR_REGISTRY }}/${{secrets.ECR_REPOSITORY}}:latest
+            docker run -d --name portfolio-container --restart unless-stopped -p 3000:80 054037110265.dkr.ecr.us-east-1.amazonaws.com/portfolio:latest
