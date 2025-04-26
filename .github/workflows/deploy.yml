@@ -26,11 +26,11 @@ jobs:
 
       - name: Build Docker Image (Hardcoded)
         run: |
-          docker build -t ${{secrets.ECR_REGISTRY}}/${{secrets.ECR_REPOSITORY}}:latest .
-
+            docker build -t 054037110265.dkr.ecr.us-east-1.amazonaws.com/portfolio:latest .
+  
       - name: Push Docker Image to ECR (Hardcoded)
         run: |
-          docker push ${{secrets.ECR_REGISTRY}}/${{secrets.ECR_REPOSITORY}}:latest
+            docker push 054037110265.dkr.ecr.us-east-1.amazonaws.com/portfolio:latest
 
       - name: SSH into EC2 and Deploy New Container
         uses: appleboy/ssh-action@v0.1.7
