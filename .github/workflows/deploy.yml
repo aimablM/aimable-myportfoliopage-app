@@ -1,4 +1,8 @@
-name: Deploy My Cloud Portfolio to AWS EC2
+# This workflow deploys a Dockerized application to an AWS EC2 instance using GitHub Actions.
+# It builds the Docker image, pushes it to Amazon ECR, and then SSHs into the EC2 instance to pull and run the new image.
+# The workflow is triggered on pushes to the main branch.
+
+name: Deploy My Cloud Portfolio to AWS EC2 Instance
 
 on:
   push:
