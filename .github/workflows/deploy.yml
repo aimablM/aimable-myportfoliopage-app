@@ -1,10 +1,10 @@
-# This is a GitHub Actions workflow file that automates the deployment of a Dockerized application to an AWS EC2 instance.
+# .github/workflows/deploy.yml
 name: Deploy My Cloud Portfolio to AWS EC2 Instance
 
 on:
   push:
     branches:
-      - main  
+      - main
 
 jobs:
   deploy:
@@ -25,13 +25,18 @@ jobs:
         run: |
           aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.ECR_REGISTRY }}
 
-      - name: Build, Tag, and Push Docker image to ECR
+      - name: Build Docker image
         run: |
           docker build -t portfolio .
+
+      - name: Tag Docker image for ECR
+        run: |
           docker tag portfolio:latest ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:latest
+
+      - name: Push Docker image to ECR
+        run: |
           docker push ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:latest
-        
-        
+
       - name: SSH into EC2 and update container
         uses: appleboy/ssh-action@v0.1.7
         with:
@@ -39,8 +44,15 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
           script: |
+            # Login to ECR on EC2
             aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.ECR_REGISTRY }}
+
+            # Pull the latest image
             docker pull ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:latest
+
+            # Stop and remove existing container if it exists
             docker stop portfolio-container || true
             docker rm portfolio-container || true
+
+            # Run new container
             docker run -d --name portfolio-container --restart unless-stopped -p 3000:80 ${{ secrets.ECR_REGISTRY }}/${{ secrets.ECR_REPOSITORY }}:latest
