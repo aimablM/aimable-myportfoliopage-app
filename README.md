@@ -1,6 +1,6 @@
-# Cloud Portfolio Website
+# Secured Cloud Portfolio Website with Infrastructure
 
-![Portfolio Logo](public/img/amlogo.svg)
+<img src="public/img/amlogo.svg" alt="Portfolio Logo" width="100" height="100">
 
 A modern, responsive portfolio website deployed on AWS cloud infrastructure using containerization and CI/CD practices.
 
