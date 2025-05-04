@@ -1,8 +1,5 @@
-# Secured Cloud Portfolio Website with Infrastructure
+# Secured Cloud Portfolio Website with Infrastructure <img src="public/img/amlogo.svg" alt="Portfolio Logo" width="100" height="100">
 
-<img src="public/img/amlogo.svg" alt="Portfolio Logo" width="100" height="100">
-
-# Secured Cloud Portfolio Website
 ![Portfolio Site](./doc-images/webpage.png)
 
 A modern, responsive portfolio website deployed on AWS cloud infrastructure using containerization and CI/CD practices. This project showcases my DevOps and cloud engineering capabilities through implementation of industry-standard tools and practices.
@@ -122,7 +119,7 @@ The application follows a modern cloud architecture pattern with multiple layers
 ```
 
 
-## 🌩️ Infrastructure Provisioning
+## Infrastructure Provisioning
 
 The entire AWS infrastructure is defined and managed using Terraform, ensuring consistency, reproducibility, and version control for all cloud resources.
 
@@ -258,7 +255,7 @@ terraform apply
 
 ![Terraform Infrastructure](./doc-images/terraform-setup.png)
 
-## 📦 Application Containerization
+## Application Containerization
 
 The portfolio application is containerized using Docker with a multi-stage build process for optimized deployment.
 
@@ -398,7 +395,7 @@ Certbot automatically:
 
 ![HTTPS/SSL Certs Setup](./doc-images/https-certs.png)
 
-## 🔄 CI/CD Pipeline
+## CI/CD Pipeline
 
 The project implements a fully automated CI/CD pipeline using GitHub Actions, ensuring consistent and reliable deployments.
 
