@@ -4,7 +4,7 @@
 
 # Secured Cloud Portfolio Website with Infrastructure
 
-![Build](https://img.shields.io/github/actions/workflow/status/aimablM/portfolio-project/deploy.yml) ![License](https://img.shields.io/github/license/aimablM/portfolio-project)
+![Build](https://img.shields.io/github/actions/workflow/status/aimablM/aimable-myportfoliopage-app/deploy.yml) 
 
 ![Portfolio Site](./doc-images/webpage.png)
 
