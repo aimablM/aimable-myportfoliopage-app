@@ -2,11 +2,15 @@
   <img src="public/img/amlogo.svg" alt="Portfolio Logo" width="100" height="100">
 </p>
 
-## Secured Cloud Portfolio Website with Infrastructure
+# Secured Cloud Portfolio Website with Infrastructure
+
+![Build](https://img.shields.io/github/actions/workflow/status/aimablM/portfolio-project/deploy.yml) ![License](https://img.shields.io/github/license/aimablM/portfolio-project)
 
 ![Portfolio Site](./doc-images/webpage.png)
 
 A modern, responsive portfolio website deployed on AWS cloud infrastructure using containerization and CI/CD practices. This project showcases my DevOps and cloud engineering capabilities through implementation of industry-standard tools and practices.
+
+**Live Site**: [aimablem.dev](https://aimablem.dev)
 
 ## Project Highlights
 
@@ -31,7 +35,7 @@ A modern, responsive portfolio website deployed on AWS cloud infrastructure usin
 - [Security Implementation](#security-implementation)
 - [Challenges & Solutions](#challenges--solutions)
 - [Results](#results)
-- [Future Enhancements](#future-enhancements)
+- [Roadmap](#roadmap)
 - [Getting Started](#getting-started)
 - [License](#license)
 - [Contact](#contact)
@@ -66,7 +70,6 @@ The architecture follows cloud-native best practices with clearly separated conc
 - **EC2**: Compute instance hosting Docker containers
 - **VPC**: Isolated network infrastructure
 - **Security Groups**: Firewall rules and access control
-- **ECR**: Container registry for Docker images
 - **Route 53**: DNS management
 
 ## Architecture
@@ -83,7 +86,7 @@ The application follows a modern cloud architecture pattern with multiple layers
                                    │
                                    ▼
 ┌─────────────┐           ┌────────────────┐
-│   GitHub    │──Push────▶│ Amazon ECR     │
+│   GitHub    │──Push────▶│  Docker Hub    │
 │ Repository  │           │ Container Reg. │
 └─────────────┘           └────────┬───────┘
                                    │
@@ -312,21 +315,20 @@ docker run -d -p 3000:80 --name portfolio aimablem/portfolio:v1.0
 
 ### Container Registry Integration
 
-The container image is pushed to Dockerhub for secure storage and deployment:
+The container image is pushed to Docker Hub for secure storage and deployment:
 
 ```bash
 # Authenticate to Docker Hub
-docker login --username your_dockerhub_username
+docker login --username aimablem
 
 # Tag the image for Docker Hub
-docker tag aimablem/portfolio:v1.0 your_dockerhub_username/portfolio:latest
+docker tag aimablem/portfolio:v1.0 aimablem/portfolio:latest
 
 # Push the image to Docker Hub
-docker push your_dockerhub_username/portfolio:latest
-
+docker push aimablem/portfolio:latest
 ```
 
-## 🖥️ Server Configuration
+## Server Configuration
 
 After provisioning infrastructure, the EC2 instance was configured to run Docker containers securely and efficiently.
 
@@ -408,7 +410,7 @@ The project implements a fully automated CI/CD pipeline using GitHub Actions, en
 The pipeline is defined in `.github/workflows/deploy.yml`:
 
 ```yaml
-name: Deploy My Cloud Portfolio to AWS EC2 Instance
+name: Deploy Portfolio to AWS EC2 Instance
 
 on:
   push:
@@ -423,46 +425,41 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
         with:
-          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
-          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-          aws-region: ${{secrets.AWS_REGION}}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Login to Amazon ECR
-        run: |
-          aws ecr get-login-password --region ${{secrets.AWS_REGION}} | docker login --username AWS --password-stdin ${{secrets.ECR_REGISTRY}}
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: aimablem/portfolio:latest
+          platforms: linux/amd64
 
-      - name: Build Docker Image
-        run: |
-          docker build -t ${{secrets.ECR_REGISTRY}}/${{secrets.ECR_REPOSITORY}}:latest .
-
-      - name: Push Docker Image to ECR
-        run: |
-          docker push ${{secrets.ECR_REGISTRY}}/${{secrets.ECR_REPOSITORY}}:latest
-
-      - name: SSH into EC2 and Deploy New Container
+      - name: Deploy to EC2
         uses: appleboy/ssh-action@v0.1.7
         with:
-          host: ${{secrets.EC2_PUBLIC_IP}}
+          host: ${{ secrets.EC2_HOST }}
           username: ubuntu
-          key: ${{secrets.EC2_SSH_PRIVATE_KEY}}
+          key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            aws ecr get-login-password --region ${{secrets.AWS_REGION}} | docker login --username AWS --password-stdin ${{secrets.ECR_REGISTRY}}
-            docker pull ${{secrets.ECR_REGISTRY}}/${{secrets.ECR_REPOSITORY}}:latest
-            docker stop portfolio-container || true
-            docker rm portfolio-container || true
-            docker network create app-network || true
-            docker run -d --name portfolio-container --restart unless-stopped -p 3000:80 ${{secrets.ECR_REGISTRY}}/${{secrets.ECR_REPOSITORY}}:latest
-            docker network connect app-network portfolio-container
+            docker pull aimablem/portfolio:latest
+            docker stop portfolio || true
+            docker rm portfolio || true
+            docker run -d --name portfolio --restart unless-stopped -p 3000:80 aimablem/portfolio:latest
 ```
 
 This workflow:
 1. Triggers on pushes to the main branch
-2. Authenticates with AWS
-3. Builds the Docker image
-4. Pushes the image to Amazon ECR
+2. Authenticates with Docker Hub
+3. Builds the Docker image for AMD64 platform (ensuring EC2 compatibility)
+4. Pushes the image to Docker Hub
 5. SSHs into the EC2 instance
 6. Pulls the latest image and redeploys the container
 
@@ -479,7 +476,7 @@ This ensures the container automatically restarts:
 - After unexpected crashes
 - When Docker daemon restarts
 
-## 🔒 Security Implementation
+## Security Implementation
 
 Security was a priority throughout the project, with multiple layers of protection implemented.
 
@@ -493,7 +490,7 @@ Security was a priority throughout the project, with multiple layers of protecti
 
 - **Multi-Stage Docker Build**: Minimized attack surface by excluding build tools from production image
 - **Non-Root Container User**: Reduced privileges for the application process
-- **Managed Container Registry**: ECR for scanning and securing container images
+- **Managed Container Registry**: Docker Hub for storing container images
 
 ### Data Protection
 
@@ -539,9 +536,9 @@ This allowed the application to correctly identify the original request protocol
 
 **Solution**: Added monitoring to verify DNS propagation and implemented a wait period in the deployment process. This allowed for DNS changes to propagate globally before considering the deployment complete.
 
-## 📊 Results
+## Results
 
-The completed project successfully demonstrates several cloud and devops capabilities:
+The completed project successfully demonstrates several cloud and DevOps capabilities:
 
 ### Performance & Reliability
 
@@ -561,30 +558,26 @@ The completed project successfully demonstrates several cloud and devops capabil
 - **Rollback Capability**: Version control for both infrastructure and application
 - **Monitoring**: Integrated health checks and logging
 
-## Future Enhancements
+This project is designed to showcase full DevOps ownership, from infrastructure provisioning to production deployment, making it an ideal portfolio piece for cloud engineering and DevOps roles.
 
-Several improvements are planned for future iterations:
+## Roadmap
 
-1. **Content Delivery Network (CDN)**
-   - Implement CloudFront for edge caching and improved global performance
+Future enhancements planned for this project:
 
-2. **Enhanced Monitoring**
-   - Add CloudWatch dashboards for comprehensive monitoring
-   - Implement automated alerting for system issues
+1. **Q3 2024**
+   - Migrate container registry from Docker Hub to Amazon ECR
+   - Implement CloudFront CDN for improved global performance
 
-3. **High Availability**
-   - Extend to multiple Availability Zones
-   - Implement load balancing for improved resilience
+2. **Q4 2024**
+   - Add CloudWatch dashboards and alerting
+   - Expand to multi-AZ deployment for high availability
 
-4. **Infrastructure Improvements**
-   - Add private subnets for enhanced security
-   - Implement Auto Scaling for dynamic resource allocation
+3. **Q1 2025**
+   - Implement blue-green deployment strategy
+   - Add automated testing in the CI/CD pipeline
+   - Create staging environment for pre-production validation
 
-5. **CI/CD Enhancements**
-   - Add automated testing stages to the pipeline
-   - Implement staging environment for pre-production validation
-
-## 🏁 Getting Started
+## Getting Started
 
 To deploy this project in your own environment:
 
@@ -600,7 +593,7 @@ To deploy this project in your own environment:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio-project.git
+   git clone https://github.com/aimablM/portfolio-project.git
    cd portfolio-project
    ```
 
@@ -612,20 +605,18 @@ To deploy this project in your own environment:
    ```
 
 3. Configure the CI/CD pipeline:
-   - Add your AWS credentials to GitHub repository secrets
+   - Add your Docker Hub credentials to GitHub repository secrets
    - Push to main branch to trigger the pipeline
 
 4. Set up SSL certificates:
    - SSH into your EC2 instance
    - Run the provided Certbot commands
 
-Detailed documentation for the CI/CD pipeline is available in a [separate repository](https://github.com/yourusername/portfolio-cicd).
-
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 📞 Contact
+## Contact
 
 - **Name**: Aimable M.
 - **LinkedIn**: [linkedin.com/in/aimable-m-920608107](https://linkedin.com/in/aimable-m-920608107)
