@@ -4,14 +4,19 @@
 
 # Secured Cloud Portfolio Website with Infrastructure
 
+![CI/CD Pipeline](https://img.shields.io/github/actions/workflow/status/aimablM/aimable-myportfoliopage-app/deploy.yml?label=CI/CD%20Pipeline) ![License](https://img.shields.io/badge/license-MIT-blue)
+
 ![Portfolio Site](./doc-images/webpage.png)
 
 A modern, responsive portfolio website deployed on AWS cloud infrastructure using containerization and CI/CD practices. This project showcases my DevOps and cloud engineering capabilities through implementation of industry-standard tools and practices.
 
 **Live Site**: [aimablem.dev](https://aimablem.dev)  
 
-![CI/CD Pipeline](https://img.shields.io/github/actions/workflow/status/aimablM/aimable-myportfoliopage-app/deploy.yml) 
+> This is not just a portfolio site — it's a full DevOps showcase with real-world tooling and security practices built from scratch, deployed on AWS, and fully automated with CI/CD.
 
+> **Services & Tools**: AWS EC2, VPC, Route 53, Docker, Terraform, GitHub Actions, NGINX, Certbot (Let's Encrypt), React
+
+> **Total Effort**: ~25 hours from infrastructure setup to production deployment and documentation
 
 ## Project Highlights
 
@@ -30,6 +35,7 @@ A modern, responsive portfolio website deployed on AWS cloud infrastructure usin
 - [Technology Stack](#technology-stack)
 - [Architecture](#architecture)
 - [Infrastructure Provisioning](#infrastructure-provisioning)
+- [DNS Management with Route 53](#dns-management-with-route-53)
 - [Application Containerization](#application-containerization)
 - [Server Configuration](#server-configuration)
 - [CI/CD Pipeline](#cicd-pipeline)
@@ -263,6 +269,30 @@ terraform apply
 
 ![Terraform Infrastructure](./doc-images/terraform-setup.png)
 
+## DNS Management with Route 53
+
+The project uses Amazon Route 53 for DNS management, providing reliable and scalable domain name resolution. Route 53 was configured to point the domain to the EC2 instance hosting the application.
+
+### Record Configuration
+
+The following DNS records were created in Route 53:
+
+- **A Record**: Points the root domain (`aimablem.dev`) to the EC2 instance's public IP address
+- **CNAME Record**: Redirects `www.aimablem.dev` to the root domain
+- **NS Records**: Configures the domain's name servers
+- **SOA Record**: Start of Authority record with domain registration information
+
+### Benefits of Route 53
+
+- **High Availability**: Route 53 is designed for 100% availability
+- **Latency-Based Routing**: Directs users to the geographically closest endpoint
+- **Health Checks**: Monitors endpoints and routes traffic away from unhealthy targets
+- **Seamless AWS Integration**: Works directly with other AWS services like EC2 and CloudFront
+
+![Route 53 DNS Configuration](./doc-images/route53-dns-setup.png)
+
+The DNS configuration ensures that users can access the site using both the root domain and the www subdomain, with all traffic securely routed to the application.
+
 ## Application Containerization
 
 The portfolio application is containerized using Docker with a multi-stage build process for optimized deployment.
@@ -401,30 +431,6 @@ Certbot automatically:
 - Set up automatic renewal via cron job
 
 ![HTTPS/SSL Certs Setup](./doc-images/https-certs.png)
-
-## DNS Management with Route 53
-
-The project uses Amazon Route 53 for DNS management, providing reliable and scalable domain name resolution. Route 53 was configured to point the domain to the EC2 instance hosting the application.
-
-### Record Configuration
-
-The following DNS records were created in Route 53:
-
-- **A Record**: Points the root domain (`aimablem.dev`) to the EC2 instance's public IP address
-- **CNAME Record**: Redirects `www.aimablem.dev` to the root domain
-- **NS Records**: Configures the domain's name servers
-- **SOA Record**: Start of Authority record with domain registration information
-
-### Benefits of Route 53
-
-- **High Availability**: Route 53 is designed for 100% availability
-- **Latency-Based Routing**: Directs users to the geographically closest endpoint
-- **Health Checks**: Monitors endpoints and routes traffic away from unhealthy targets
-- **Seamless AWS Integration**: Works directly with other AWS services like EC2 and CloudFront
-
-![Route 53 DNS Configuration](./doc-images/route53-dns-setup.png)
-
-The DNS configuration ensures that users can access the site using both the root domain and the www subdomain, with all traffic securely routed to the application.
 
 ## CI/CD Pipeline
 
@@ -644,6 +650,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Contact
 
 - **Name**: Aimable M.
-- **LinkedIn**: [linkedin.com/in/aimable-m-920608107](https://linkedin.com/in/aimable-m-920608107)
+- **LinkedIn**: [linkedin.com/in/aimable-m-920608107](https://linkedin.com/in/aimablem)
 - **GitHub**: [github.com/aimablM](https://github.com/aimablM)
 - **Twitter**: [twitter.com/aimable_mugwane](https://twitter.com/aimable_mugwane)
