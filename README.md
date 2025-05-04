@@ -4,13 +4,13 @@
 
 # Secured Cloud Portfolio Website with Infrastructure
 
-![Build](https://img.shields.io/github/actions/workflow/status/aimablM/aimable-myportfoliopage-app/deploy.yml) 
-
 ![Portfolio Site](./doc-images/webpage.png)
 
 A modern, responsive portfolio website deployed on AWS cloud infrastructure using containerization and CI/CD practices. This project showcases my DevOps and cloud engineering capabilities through implementation of industry-standard tools and practices.
 
-**Live Site**: [aimablem.dev](https://aimablem.dev)
+**Live Site**: [aimablem.dev](https://aimablem.dev) 
+![CI/CD Pipeline](https://img.shields.io/github/actions/workflow/status/aimablM/aimable-myportfoliopage-app/deploy.yml) 
+![Docker Build](https://img.shields.io/docker/build/aimablem/portfolio?label=Docker%20Build)
 
 ## Project Highlights
 
