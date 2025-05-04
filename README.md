@@ -402,6 +402,30 @@ Certbot automatically:
 
 ![HTTPS/SSL Certs Setup](./doc-images/https-certs.png)
 
+## DNS Management with Route 53
+
+The project uses Amazon Route 53 for DNS management, providing reliable and scalable domain name resolution. Route 53 was configured to point the domain to the EC2 instance hosting the application.
+
+### Record Configuration
+
+The following DNS records were created in Route 53:
+
+- **A Record**: Points the root domain (`aimablem.dev`) to the EC2 instance's public IP address
+- **CNAME Record**: Redirects `www.aimablem.dev` to the root domain
+- **NS Records**: Configures the domain's name servers
+- **SOA Record**: Start of Authority record with domain registration information
+
+### Benefits of Route 53
+
+- **High Availability**: Route 53 is designed for 100% availability
+- **Latency-Based Routing**: Directs users to the geographically closest endpoint
+- **Health Checks**: Monitors endpoints and routes traffic away from unhealthy targets
+- **Seamless AWS Integration**: Works directly with other AWS services like EC2 and CloudFront
+
+![Route 53 DNS Configuration](./doc-images/route53-dns-setup.png)
+
+The DNS configuration ensures that users can access the site using both the root domain and the www subdomain, with all traffic securely routed to the application.
+
 ## CI/CD Pipeline
 
 The project implements a fully automated CI/CD pipeline using GitHub Actions, ensuring consistent and reliable deployments.
