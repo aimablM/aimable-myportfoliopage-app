@@ -3,13 +3,11 @@
 <img src="public/img/amlogo.svg" alt="Portfolio Logo" width="100" height="100">
 
 # Secured Cloud Portfolio Website
-
-![Portfolio Logo](./public/img/amlogo.svg)
 ![Portfolio Site](./doc-images/webpage.png)
 
 A modern, responsive portfolio website deployed on AWS cloud infrastructure using containerization and CI/CD practices. This project showcases my DevOps and cloud engineering capabilities through implementation of industry-standard tools and practices.
 
-## 🌟 Project Highlights
+## Project Highlights
 
 - **Infrastructure as Code**: AWS resources provisioned and managed with Terraform
 - **Containerization**: Multi-stage Docker build for efficient deployment
@@ -20,7 +18,7 @@ A modern, responsive portfolio website deployed on AWS cloud infrastructure usin
 - **Monitoring**: Server health monitoring (integrated CloudWatch metrics)
 - **High Availability**: Container auto-restart policies and error handling
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Project Overview](#project-overview)
 - [Technology Stack](#technology-stack)
@@ -37,7 +35,7 @@ A modern, responsive portfolio website deployed on AWS cloud infrastructure usin
 - [License](#license)
 - [Contact](#contact)
 
-## 🔍 Project Overview
+## Project Overview
 
 This portfolio website serves as both a personal showcase and a practical demonstration of modern DevOps practices. The project implements a complete cloud deployment pipeline from code to production, focusing on security, automation, and scalability.
 
@@ -48,9 +46,7 @@ The architecture follows cloud-native best practices with clearly separated conc
 - **CI/CD**: Automated testing and deployment through GitHub Actions
 - **Security**: HTTPS, security groups, and principle of least privilege
 
-![AWS Architecture](./doc-images/aws-architecture.png)
-
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Frontend
 - **React**: Component-based UI library
@@ -72,7 +68,9 @@ The architecture follows cloud-native best practices with clearly separated conc
 - **ECR**: Container registry for Docker images
 - **Route 53**: DNS management
 
-## 🏗️ Architecture
+## Architecture
+
+![AWS Infrastructure](./doc-images/aws-architecture.png)
 
 The application follows a modern cloud architecture pattern with multiple layers of security and automation:
 
@@ -123,7 +121,6 @@ The application follows a modern cloud architecture pattern with multiple layers
 └─────────────────────────────────────────────────────────────┘
 ```
 
-> _**Insert screenshot: Architecture diagram showing the cloud infrastructure**_
 
 ## 🌩️ Infrastructure Provisioning
 
@@ -259,7 +256,7 @@ terraform plan
 terraform apply
 ```
 
-> _**Insert screenshot: Successful Terraform apply showing provisioned resources**_
+![Terraform Infrastructure](./doc-images/terraform-setup.png)
 
 ## 📦 Application Containerization
 
@@ -310,21 +307,22 @@ docker build -t aimablem/portfolio:v1.0 .
 docker run -d -p 3000:80 --name portfolio aimablem/portfolio:v1.0
 ```
 
-> _**Insert screenshot: Docker build process and running container**_
+![Docker Image Build](./doc-images/docker-image-build.png)
 
 ### Container Registry Integration
 
-The container image is pushed to Amazon ECR for secure storage and deployment:
+The container image is pushed to Dockerhub for secure storage and deployment:
 
 ```bash
-# Authenticate to Amazon ECR
-aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com
+# Authenticate to Docker Hub
+docker login --username your_dockerhub_username
 
-# Tag the image for ECR
-docker tag aimablem/portfolio:v1.0 $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/portfolio:latest
+# Tag the image for Docker Hub
+docker tag aimablem/portfolio:v1.0 your_dockerhub_username/portfolio:latest
 
-# Push the image to ECR
-docker push $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/portfolio:latest
+# Push the image to Docker Hub
+docker push your_dockerhub_username/portfolio:latest
+
 ```
 
 ## 🖥️ Server Configuration
@@ -332,6 +330,8 @@ docker push $AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/portfolio:latest
 After provisioning infrastructure, the EC2 instance was configured to run Docker containers securely and efficiently.
 
 ### Docker Installation
+
+![Docker Install](./doc-images/ec2-docker-install.png)
 
 ```bash
 sudo apt update
@@ -396,7 +396,7 @@ Certbot automatically:
 - Updated NGINX configuration
 - Set up automatic renewal via cron job
 
-> _**Insert screenshot: Successful SSL certificate generation and verification**_
+![HTTPS/SSL Certs Setup](./doc-images/https-certs.png)
 
 ## 🔄 CI/CD Pipeline
 
@@ -465,8 +465,6 @@ This workflow:
 5. SSHs into the EC2 instance
 6. Pulls the latest image and redeploys the container
 
-> _**Insert screenshot: Successful GitHub Actions workflow execution**_
-
 ### Container Restart Policy
 
 To ensure high availability, the container is configured with a restart policy:
@@ -500,11 +498,8 @@ Security was a priority throughout the project, with multiple layers of protecti
 
 - **HTTPS Everywhere**: SSL/TLS encryption for all web traffic
 - **Automatic Certificate Renewal**: Certbot configured to auto-renew certificates
-- **Secrets Management**: GitHub Actions secrets for storing sensitive credentials
 
-> _**Insert screenshot: Security layers diagram or security scanning results**_
-
-## 🔥 Challenges & Solutions
+## Challenges & Solutions
 
 Several challenges were encountered and resolved during the project:
 
@@ -545,7 +540,7 @@ This allowed the application to correctly identify the original request protocol
 
 ## 📊 Results
 
-The completed project successfully demonstrates several advanced capabilities:
+The completed project successfully demonstrates several cloud and devops capabilities:
 
 ### Performance & Reliability
 
@@ -565,9 +560,7 @@ The completed project successfully demonstrates several advanced capabilities:
 - **Rollback Capability**: Version control for both infrastructure and application
 - **Monitoring**: Integrated health checks and logging
 
-> _**Insert screenshot: Performance metrics dashboard or security scan results**_
-
-## 🚀 Future Enhancements
+## Future Enhancements
 
 Several improvements are planned for future iterations:
 
