@@ -1,3 +1,6 @@
+<div style="text-align: center;">
+  <img src="public/img/amlogo.svg" alt="Portfolio Logo" width="100" height="100">
+</div>
 # Secured Cloud Portfolio Website with Infrastructure <img src="public/img/amlogo.svg" alt="Portfolio Logo" width="100" height="100">
 
 ![Portfolio Site](./doc-images/webpage.png)
