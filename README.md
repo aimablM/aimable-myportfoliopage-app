@@ -4,8 +4,7 @@
 
 # Secured Cloud Portfolio Website with Infrastructure
 
-![CI/CD Pipeline](https://img.shields.io/github/actions/workflow/status/aimablM/aimable-myportfoliopage-app/deploy.yml?label=CI/CD%20Pipeline) ![License](https://img.shields.io/badge/license-MIT-blue)
-
+![CI/CD Status](https://img.shields.io/github/actions/workflow/status/aimablM/aimable-myportfoliopage-app/deploy.yml?label=CI%2FCD%20Pipeline&style=for-the-badge&logo=github-actions&logoColor=white) ![License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge&logo=open-source-initiative&logoColor=white)
 ![Portfolio Site](./doc-images/webpage.png)
 
 A modern, responsive portfolio website deployed on AWS cloud infrastructure using containerization and CI/CD practices. This project showcases my DevOps and cloud engineering capabilities through implementation of industry-standard tools and practices.
