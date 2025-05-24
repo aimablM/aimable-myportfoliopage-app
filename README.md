@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="public/img/amlogo.svg" alt="Portfolio Logo" width="100" height="100">
+  <img src="public/img/amlogo.svg" alt="Portfolio Logo" width="100" height="80">
 </p>
 
 # Secured Cloud Portfolio Website with Infrastructure
