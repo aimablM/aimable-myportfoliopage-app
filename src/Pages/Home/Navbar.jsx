@@ -37,8 +37,8 @@ function Navbar() {
     <nav className={`navbar ${navActive ? "active" : ""}`}>
       <div>
         <img src="./img/amlogo.png" alt="AIMABLEM" />
-        <p className="navbar--logo">STAGING BRANCH</p>
       </div> 
+      <h2 className="navbar--title">STAGING BRANCH</h2>
       <a
         className={`nav__hamburger ${navActive ? "active" : ""}`}
         onClick={toggleNav}
