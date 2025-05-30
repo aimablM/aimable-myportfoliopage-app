@@ -44,6 +44,6 @@ jobs:
             docker pull ${{secrets.ECR_REGISTRY}}/${{secrets.ECR_REPOSITORY}}:latest
             docker stop portfolio-container || true
             docker rm portfolio-container || true
-            docker network create app-network || true
+            docker network inspect app-network >/dev/null 2>&1 || docker network create app-network
             docker run -d --name portfolio-container --restart unless-stopped -p 3000:80 ${{secrets.ECR_REGISTRY}}/${{secrets.ECR_REPOSITORY}}:latest
             docker network connect app-network portfolio-container
