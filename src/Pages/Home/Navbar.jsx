@@ -95,7 +95,7 @@ function Navbar() {
             <Link
               onClick={() => {
                 closeMenu();
-                window.open("./current_resume.pdf"); // Replace with the actual path to resume file
+                window.open("./Aimable_Mugwaneza_Resume_2025.pdf"); // Replace with the actual path to resume file
               }}
               activeClass="navbar--active-content"
               spy={true}
