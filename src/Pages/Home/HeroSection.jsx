@@ -3,9 +3,10 @@ import { Link } from "react-scroll";
 export default function HeroSection() {
     return (
       <section id="heroSection" className="hero--section">
+        <p className="section--title"> Viewing Staging Branch Version</p>
         <div className="hero--section--content--box">
           <div className="hero--section--content">
-            <p className="section--title">Hey, I'm Aimable, Viewing Development Branch Version</p>
+            <p className="section--title">Hey, I'm Aimable,</p>
             <h1 className="hero--section--title">
               <span className="hero--section--title--color">
               Aspiring Cloud | DevOps Engineer
