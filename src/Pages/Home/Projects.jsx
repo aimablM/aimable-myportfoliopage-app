@@ -108,7 +108,7 @@ export default function MyProjects() {
       "Custom VPC and public subnet with hardened security groups",
       "NGINX reverse proxy and multi-stage Docker build"
     ],
-    repoUrl: "https://github.com/aimablM/secure-cloud-portfolio",
+    repoUrl: "https://github.com/aimablM/aimable-myportfoliopage-app",
     demoUrl: "https://aimablem.dev"
   },
   techStack: {
@@ -136,8 +136,8 @@ export default function MyProjects() {
           "Private key handling via GitHub secrets",
           "Versioned container deployment strategy"
         ],
-        repoUrl: "https://github.com/aimablM/ci-cd-automation",
-        demoUrl: "https://demo.aimablemugwane.com/ci-cd-demo"
+        repoUrl: "https://github.com/aimablM/aws-portfolio-cicd-pipeline",
+        demoUrl: "https://github.com/aimablM/aimable-myportfoliopage-app/actions"
       },
       techStack: {
         infrastructure: ["Docker", "Terraform", "EC2", "NGINX", "Route 53"],

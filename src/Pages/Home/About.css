@@ -250,6 +250,27 @@
     color: #0f2942;
     text-align: center;
   }
+
+  .cert-badge-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.cert-badge-image {
+  width: 140px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.cert-badge-image:hover {
+  transform: scale(1.05);
+}
+
   
   /* ===============================================
      RESPONSIVE DESIGN

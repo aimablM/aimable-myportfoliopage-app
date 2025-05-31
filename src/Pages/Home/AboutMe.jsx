@@ -49,12 +49,12 @@ export default function AboutMe() {
               {/* Certification badge placeholder */}
               <div className="cert-badge-container">
   <img
-    src="./img/amlogo.png"
+    src="./img/aws-ccp.png"
     alt="AWS Certified Cloud Practitioner"
     className="cert-badge-image"
   />
   <img
-    src="./img/amlogo.png"
+    src="./img/security-plus.png"
     alt="CompTIA Security+ Certified"
     className="cert-badge-image"
   />
