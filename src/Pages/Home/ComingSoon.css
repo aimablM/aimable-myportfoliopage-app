@@ -1,0 +1,262 @@
+/* Coming Soon Blog Section Styling */
+.blog-section {
+    padding: 5rem 0;
+    background-color: #f8fafc;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .blog-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    flex: 1;
+  }
+  
+  /* Section Header - Centered */
+  .blog-section .section-header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .blog-section .section-heading {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #0f2942;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .blog-section .section-icon {
+    color: #2563eb;
+    font-size: 1.75rem;
+  }
+  
+  .coming-soon-badge {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+  }
+  
+  .blog-section .section-description {
+    color: #4b5563;
+    font-size: 1.05rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+  
+  /* Coming Soon Grid */
+  .coming-soon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  /* Coming Soon Card */
+  .coming-soon-card {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+  }
+  
+  .coming-soon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(15, 41, 66, 0.1);
+  }
+  
+  /* Coming Soon Image */
+  .coming-soon-image {
+    height: 180px;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .coming-soon-image i {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* Coming Soon Content */
+  .coming-soon-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+    position: relative;
+  }
+  
+  .pulse-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #2563eb;
+    border-radius: 50%;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    box-shadow: 0 0 0 rgba(37, 99, 235, 0.4);
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(37, 99, 235, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+    }
+  }
+  
+  .coming-soon-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f2942;
+    margin-bottom: 1.25rem;
+  }
+  
+  .coming-soon-line {
+    height: 12px;
+    width: 100%;
+    background-color: #f3f4f6;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .coming-soon-line.short {
+    width: 65%;
+  }
+  
+  .coming-soon-line.medium {
+    width: 80%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .notify-button {
+    background-color: transparent;
+    color: #2563eb;
+    border: 1px solid #2563eb;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0.375rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+  }
+  
+  .notify-button:hover {
+    background-color: #2563eb;
+    color: white;
+  }
+  
+  /* Subscribe Section */
+  .subscribe-container {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    max-width: 768px;
+    margin: 0 auto;
+  }
+  
+  .subscribe-container p {
+    color: #4b5563;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .subscribe-form {
+    display: flex;
+    gap: 0.75rem;
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  
+  .subscribe-input {
+    flex-grow: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    font-size: 0.95rem;
+    color: #4b5563;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+  
+  .subscribe-input:focus {
+    border-color: #2563eb;
+  }
+  
+  .subscribe-button {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.375rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+  }
+  
+  .subscribe-button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .coming-soon-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .coming-soon-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .subscribe-form {
+      flex-direction: column;
+    }
+    
+    .subscribe-button {
+      width: 100%;
+    }
+  }

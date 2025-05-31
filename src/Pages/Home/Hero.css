@@ -1,0 +1,312 @@
+/* Hero.css - Clean and organized CSS for the Hero section */
+
+/* Main Hero Section */
+.hero-section {
+  background-color: #0f2942;
+  min-height: 105vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  position: relative;
+  z-index: 0; /* Make sure content appears behind navbar */
+  padding-top: 8rem; /* Extra padding to account for navbar */
+  margin-bottom: 2rem; /* Adjusted for better spacing */
+}
+
+/* Container */
+.hero-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column-reverse; /* Image first on mobile */
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* Content Side */
+.hero-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Typography */
+.hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-size: 2.5rem; /* Smaller on mobile */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.hero-title-primary {
+  color: #60a5fa;
+}
+
+.hero-title-secondary {
+  color: #d1d5db;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  max-width: 700px;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%; /* Full width on mobile for better button spacing */
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: white;
+  color: #2563eb;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-secondary:hover {
+  background-color: white;
+  color: #0f2942;
+}
+
+/* Social Media Links */
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-button {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.social-button:hover {
+  color: #60a5fa;
+  transform: translateY(-3px);
+}
+
+/* Image Container */
+.hero-image-container {
+  margin-top: -5rem;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover Effects */
+.hero-image-container:hover {
+  transform: translateY(-5px);
+}
+
+.hero-image-container:hover .hero-image {
+  box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.2), 0 15px 15px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design - Tablets */
+@media (min-width: 768px) {
+  .hero-container {
+    flex-direction: row; /* Side by side on larger screens */
+    align-items: center;
+  }
+  
+  .hero-content {
+    width: 50%;
+  }
+  
+  .hero-image-container {
+    width: 50%;
+  }
+  
+  .hero-title {
+    font-size: 3rem; /* Larger on tablets */
+  }
+  
+  /* Return buttons to horizontal layout on tablets */
+  .hero-buttons {
+    flex-direction: row;
+    width: auto;
+  }
+  
+  .btn {
+    width: auto;
+  }
+}
+
+/* Responsive Design - Desktops */
+@media (min-width: 1024px) {
+  .hero-section {
+    padding-top: 5rem; /* Adjusted for desktop */
+  }
+  
+  .hero-title {
+    font-size: 4rem; /* Largest on desktop */
+  }
+  
+  .hero-description {
+    font-size: 1.25rem;
+  }
+}
+
+/* Responsive Design - Large Screens */
+@media (min-width: 1440px) {
+  .hero-container {
+    max-width: 1600px;
+  }
+}
+
+/* Responsive Design - Extra Small Screens */
+@media (max-width: 480px) {
+  /* Significantly reduce top padding and overall height */
+  .hero-section {
+    margin-top: -2rem;
+    padding: 0rem 2rem 1rem 2rem;
+    min-height: auto;
+    height: 100vh;
+    justify-content: flex-start;
+  }
+  
+  /* Tighter spacing for content but larger buttons */
+  .hero-buttons {
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  
+  .btn {
+    width: auto;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  /* Larger font sizes while maintaining compact layout */
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+    text-align: left;
+    margin-bottom: 0.85rem;
+    line-height: 1.2;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+    margin-bottom: 1.25rem;
+  }
+  
+  /* Left-align content for mobile with tight spacing */
+  .hero-content {
+    padding: 0;
+    align-items: flex-start;
+    text-align: left;
+  }
+  
+  /* Larger social icons with slightly more spacing */
+  .social-links {
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 0.75rem;
+    gap: 1.5rem;
+  }
+  
+  .social-button {
+    font-size: 1.75rem;
+  }
+  
+  /* Slightly larger image */
+  .hero-image-container {
+    margin: 0 0 1.25rem 0;
+    max-width: 95%;
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+  
+  .hero-image {
+    border-radius: 1.5rem;
+  }
+  
+  /* Update colors to match the screenshot */
+  .hero-title-primary {
+    color: #62a5ff;
+  }
+  
+  /* Adjust container spacing */
+  .hero-container {
+    gap: 0;
+    padding: 0;
+  }
+}
+
+/* Very small mobile devices */
+@media (max-width: 360px) {
+  .hero-section {
+    padding: 7rem 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+}

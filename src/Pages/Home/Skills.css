@@ -1,0 +1,212 @@
+/* Import Font if you don't have it already in your main CSS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Section Styles */
+.skills-section {
+  margin-top: 0px;
+  padding: 5rem 0;
+  background-color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.skills-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  margin-top: -3rem; /* Adjusted for better spacing */
+}
+
+.skills-heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.skills-description {
+  color: #727272;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* Skill Card */
+.skill-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Container */
+.icon-container {
+  width: 4rem;
+  height: 4rem;
+  margin: 0 auto 1rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem; /* Size for FontAwesome icons */
+}
+
+/* FontAwesome Icon Colors - Updated for brand colors */
+.blue-bg {
+  background-color: #f0f8ff; /* Light JavaScript background */
+  color: #F7DF1E; /* JavaScript yellow */
+}
+
+.indigo-bg {
+  background-color: #e6f7ff; /* Light React background */
+  color: #61DAFB; /* React blue */
+}
+
+.green-bg {
+  background-color: #f0fffd; /* Light Docker background */
+  color: #2496ED; /* Docker blue */
+}
+
+.purple-bg {
+  background-color: #f3f1ff; /* Light cloud background */
+  color: #326CE5; /* Kubernetes blue (cloud-related) */
+}
+
+.yellow-bg {
+  background-color: #fffdf0; /* Light MongoDB background */
+  color: #47A248; /* MongoDB green */
+}
+
+.red-bg {
+  background-color: #fff8f8; /* Light AWS background */
+  color: #FF9900; /* AWS orange */
+}
+
+.pink-bg {
+  background-color: #fff0f7; /* Light container background */
+  color: #E50914; /* Bright red for containers */
+}
+
+.gray-bg {
+  background-color: #f5f5f5; /* Light Git background */
+  color: #F05032; /* Git orange/red */
+}
+
+/* Skill Title */
+.skill-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #222222;
+}
+
+/* Skill List */
+.skill-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  width: 50%;
+  font-size: 0.975rem;
+  color: #000000;
+}
+
+.progress-bg {
+  width: 50%;
+  height: 0.5rem;
+  background-color: #f0f0f0;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+/* Progress Bars - Updated for brand colors */
+.progress-bar {
+  height: 100%;
+  border-radius: 9999px;
+}
+
+.blue-bar {
+  background-color: #F7DF1E; /* JavaScript yellow */
+}
+
+.indigo-bar {
+  background-color: #61DAFB; /* React blue */
+}
+
+.green-bar {
+  background-color: #2496ED; /* Docker blue */
+}
+
+.purple-bar {
+  background-color: #326CE5; /* Kubernetes blue */
+}
+
+.yellow-bar {
+  background-color: #2463eb; /* MongoDB green */
+}
+
+.red-bar {
+  background-color: #FF9900; /* AWS orange */
+}
+
+.pink-bar {
+  background-color: #E50914; /* Bright red for containers */
+}
+
+.gray-bar {
+  background-color: #F05032; /* Git orange/red */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-section {
+    padding: 3rem 1rem;
+  }
+  
+  .skills-heading {
+    font-size: 1.875rem;
+  }
+}
