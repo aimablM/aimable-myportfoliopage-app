@@ -48,22 +48,23 @@ export default function AboutMe() {
               
               {/* Certification badge placeholder */}
               <div className="cert-badge-container">
-  <img
-    src="./img/aws-ccp.png"
-    alt="AWS Certified Cloud Practitioner"
-    className="cert-badge-image"
-  />
-  <img
-    onClick={() => {
-                window.open("./CompTIA_Security+_CE.pdf", '_blank', 'noopener noreferrer')
-              }}
-    src="./img/security-plus.png"
-    alt="CompTIA Security+ Certified"
-    className="cert-badge-image"
-  />
-
-</div>
-
+                <img
+                onClick={() => {
+                              window.open("./AWS_Certified_Cloud_Practitioner.pdf", '_blank', 'noopener noreferrer')
+                            }}
+                  src="./img/aws-ccp.png"
+                  alt="AWS Certified Cloud Practitioner"
+                  className="cert-badge-image"
+                />
+                <img
+                  onClick={() => {
+                              window.open("./CompTIA_Security+_CE.pdf", '_blank', 'noopener noreferrer')
+                            }}
+                  src="./img/security-plus.png"
+                  alt="CompTIA Security+ Certified"
+                  className="cert-badge-image"
+                />
+              </div>
             </div>
           </div>
           
