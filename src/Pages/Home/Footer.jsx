@@ -41,7 +41,7 @@ function Footer() {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                to="heroSection"
+                to="hero-section"
                 className="text-md"
               >
                 Home
@@ -54,7 +54,7 @@ function Footer() {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                to="MyPortfolio"
+                to="Projects"
                 className="text-md"
               >
                 Projects
@@ -127,7 +127,7 @@ function Footer() {
             </li>
             <li>
               <a
-                href="mailto:contact@aimable.com"
+                href="mailto:aimable.mugwaneza@gmail.com"
                 className="social-link"
                 target="_blank"
                 rel="noreferrer"

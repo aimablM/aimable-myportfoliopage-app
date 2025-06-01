@@ -130,18 +130,22 @@ export default function MyProjects() {
         {name: "NGINX", icon: "nginx", color: "#009639"}
       ],
       details: {
-        overview: "A subproject of the Portfolio project, this system integrates CI/CD pipelines using GitHub Actions to automate image builds, push to Docker Hub/ECR, and trigger EC2 redeploy via secure SSH.",
+        overview: "Implemented a production-grade CI/CD pipeline that automatically builds Docker images, pushes to Amazon ECR, and securely deploys to an EC2 instance via SSH. This system powers live infrastructure for cloud-native apps, demonstrating DevOps automation and security best practices.",
         highlights: [
-          "Automated deploys on code push",
-          "Private key handling via GitHub secrets",
-          "Versioned container deployment strategy"
+          "Automated end-to-end deployment pipeline triggered on code push to main branch",
+    "GitHub Actions workflow orchestrates build, push, and EC2 deploy using secrets",
+    "Optimized multi-stage Docker builds for smaller, production-ready images",
+    "SSH-based container lifecycle management with cleanup and zero-downtime restart",
+    "Secure secrets handling with GitHub Secrets and AWS IAM credential separation",
+    "Resolved real-world issues: ECR auth errors, SSH key formatting, and architecture mismatch"
         ],
         repoUrl: "https://github.com/aimablM/aws-portfolio-cicd-pipeline",
         demoUrl: "https://github.com/aimablM/aimable-myportfoliopage-app/actions"
       },
       techStack: {
         infrastructure: ["Docker", "Terraform", "EC2", "NGINX", "Route 53"],
-        development: ["HTTPS", "Bash", "YAML", "JavaScript"]
+        development: ["HTTPS", "Bas
+          h", "YAML", "JavaScript"]
       }
     },
     {
