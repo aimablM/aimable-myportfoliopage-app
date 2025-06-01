@@ -54,10 +54,14 @@ export default function AboutMe() {
     className="cert-badge-image"
   />
   <img
+    onClick={() => {
+                window.open("./CompTIA_Security+_CE.pdf", '_blank', 'noopener noreferrer')
+              }}
     src="./img/security-plus.png"
     alt="CompTIA Security+ Certified"
     className="cert-badge-image"
   />
+
 </div>
 
             </div>
