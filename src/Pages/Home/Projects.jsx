@@ -144,8 +144,7 @@ export default function MyProjects() {
       },
       techStack: {
         infrastructure: ["Docker", "Terraform", "EC2", "NGINX", "Route 53"],
-        development: ["HTTPS", "Bas
-          h", "YAML", "JavaScript"]
+        development: ["HTTPS", "Bash", "YAML", "JavaScript"]
       }
     },
     {
