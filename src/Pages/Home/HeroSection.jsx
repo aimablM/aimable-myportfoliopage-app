@@ -7,7 +7,7 @@ export default function HeroSection() {
     <header className="hero-section">
       <div className="hero-container">
         <div className="hero-content">
-          <h2 className="hero-subtitle">Hey, I'm Aimable</h2>
+          <h2 className="hero-subtitle">Hey, I'm Ashley</h2>
           <h1 className="hero-title">
             <span className="hero-title-primary">Aspiring Cloud</span> | 
             <span className="hero-title-secondary"> DevOps Engineer</span>
