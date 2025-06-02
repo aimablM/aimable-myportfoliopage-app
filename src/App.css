@@ -63,8 +63,6 @@ justify-content: space-between;
 justify-content: left;
 }
 
-
-
 .btn-socials {
   border: none;                       /* No padding to ensure image fits */
   display: flex;                     /* Use Flexbox for button content */
@@ -323,9 +321,6 @@ h2 {
 
 */
 
-
-
-
 .skills--section--title {
   color: var(--heading-color);
   font-size: 32px;
@@ -469,7 +464,7 @@ h2 {
 .contact--section {
   display: flex;
   min-height: 100vh;
-  padding: 120px 85px 85px; /* Increased top padding to account for navbar */
+  padding: 0px 85px 85px; /* Increased top padding to account for navbar */
   flex-direction: column;
   justify-content: center;
   align-items: center;

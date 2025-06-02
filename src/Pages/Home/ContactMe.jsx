@@ -3,7 +3,7 @@ export default function ContactMe() {
       <section id="Contact" className="contact--section">
         <div>
           <p className="sub--title">Get In Touch</p>
-          <h2>Contact Me</h2>
+          <h2>Work With Me</h2>
           <p className="text-lg">
             Let's connect! Reach out to discuss projects, opportunities, or just say hi!
           </p>

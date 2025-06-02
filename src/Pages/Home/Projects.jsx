@@ -177,34 +177,39 @@ export default function MyProjects() {
       }
     },
     {
-      id: 4,
-      title: "Container Security Platform",
-      description: "Security-focused container platform with image scanning, runtime protection, and compliance enforcement for cloud applications.",
-      image: "security-bg",
-      status: "Completed",
-      tech: [
-        {name: "Docker", icon: "docker", color: "#2496ed"},
-        {name: "AWS", icon: "aws", color: "#ff9900"},
-        {name: "Terraform", icon: "terraform", color: "#7b42bc"},
-        {name: "Python", icon: "python", color: "#3776ab"},
-        {name: "Bash", icon: "bash", color: "#4EAA25"}
-      ],
-      details: {
-        overview: "Implemented a comprehensive security stack for containerized applications with vulnerability scanning, policy enforcement, and runtime monitoring.",
-        highlights: [
-          "Automated vulnerability scanning for container images",
-          "Policy as code with OPA/Gatekeeper",
-          "Runtime security monitoring with Falco",
-          "Secure secret management with AWS KMS"
-        ],
-        repoUrl: "https://github.com/aimablM/container-security-platform",
-        demoUrl: "https://security-demo.aimablemugwane.com"
-      },
-      techStack: {
-        infrastructure: ["Docker", "AWS ECR", "AWS KMS", "OPA/Gatekeeper", "Falco"],
-        development: ["Trivy", "Python", "Bash", "YAML", "Terraform"]
-      }
-    },
+  id: 4,
+  title: "Multi-Environment CI/CD Pipeline",
+  description: "A robust CI/CD system that deploys Dockerized apps across development, staging, and production environments using GitHub Actions, AWS ECR, EC2, and NGINX with secure SSL and subdomain routing.",
+  image: "security-bg",
+  status: "Completed",
+  tech: [
+    { name: "GitHub", icon: "github", color: "#24292e" },
+    { name: "Docker", icon: "docker", color: "#2496ed" },
+    { name: "AWS EC2", icon: "ec2", color: "#ff9900" },
+    { name: "AWS ECR", icon: "aws", color: "#ff9900" },
+    { name: "NGINX", icon: "nginx", color: "#009639" },
+    { name: "Terraform", icon: "terraform", color: "#7b42bc" }
+  ],
+  details: {
+    overview: "Designed and deployed a full-scale, production-grade multi-environment CI/CD pipeline. Each GitHub branch (develop, staging, main) automatically triggers a unique Docker build, pushes to ECR with a matching tag (:dev, :staging, :latest), and deploys to its corresponding container on EC2. Subdomain-based routing (dev., staging., prod.) is handled by NGINX with SSL managed by Let's Encrypt.",
+    highlights: [
+      "Isolated development, staging, and production pipelines via branch-based GitHub Actions",
+      "Separate Docker tags and containers for each environment with clear port mappings",
+      "Subdomain routing with NGINX reverse proxy for real-world deployment simulation",
+      "SSL certificate provisioning for each environment using Certbot & Let's Encrypt",
+      "Route 53 DNS configuration with wildcard support for dev/staging subdomains",
+      "Secured SSH deployments using GitHub Secrets and Docker lifecycle management",
+      "Detailed documentation and live environment testing across three branches"
+    ],
+    repoUrl: "https://github.com/aimablM/aimable-myportfoliopage-app",
+    demoUrl: "https://aimablem.dev"
+  },
+  techStack: {
+    infrastructure: ["Docker", "GitHub Actions", "EC2", "ECR", "NGINX", "Route 53", "Let's Encrypt"],
+    development: ["Bash", "YAML", "JavaScript", "React"]
+  }
+}
+,
     {
       id: 5,
       title: "AWS Cost Optimization",
