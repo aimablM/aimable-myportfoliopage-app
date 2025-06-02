@@ -130,7 +130,7 @@
 
 /* Image Container */
 .hero-image-container {
-  margin-top: 1rem;
+  margin-top: -5rem;
   width: 100%;
   max-width: 700px;
   display: flex;
