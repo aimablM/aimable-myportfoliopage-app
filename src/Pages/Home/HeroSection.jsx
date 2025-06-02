@@ -28,7 +28,7 @@ export default function HeroSection() {
             </Link>
             <button 
               onClick={() => {
-                window.open("./current_resume.pdf", '_blank', 'noopener noreferrer')
+                window.open("./Aimable_Mugwaneza_Resume_2025.pdf", '_blank', 'noopener noreferrer')
               }}
               className="btn btn-secondary"
             >
