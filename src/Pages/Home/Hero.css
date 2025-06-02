@@ -299,7 +299,7 @@
 /* Very small mobile devices */
 @media (max-width: 380px) {
   .hero-section {
-    padding: 7rem 1.5rem 1.5rem 1.5rem;
+    padding: 7rem 1.5rem 4rem 1.5rem;
     margin-top: 1rem; /* Adjusted for very small screens */
   }
   
