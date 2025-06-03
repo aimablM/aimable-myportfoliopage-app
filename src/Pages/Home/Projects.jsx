@@ -82,6 +82,19 @@ export default function MyProjects() {
     setActiveTab(tab);
   };
 
+  const getModalBackgroundClass = (projectId) => {
+  const backgroundMap = {
+    1: "terraform-bg",     // Secure Cloud Portfolio Infrastructure
+    2: "cicd-bg",          // Multi-Environment CI/CD Pipeline
+    3: "kubernetes-bg",    // FlashLearn - Cloud-Powered Learning Platform
+    4: "terraform-bg",     // Forever Store - E-Commerce Platform
+    5: "monitor-bg",       // Prometheus & Grafana Monitoring Stack
+    6: "cicd-bg"           // AWS ECR CI/CD Pipeline
+  };
+  
+  return backgroundMap[projectId] || "terraform-bg"; // Default fallback
+};
+
   const projects = [
   {
     id: 1,
@@ -307,15 +320,16 @@ export default function MyProjects() {
                 </span>
               </div>
               <div 
-                className={`project-image-container`}
-                onClick={() => openProjectDetails(project.id)}
-              >
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="project-image"
-                />
-              </div>
+  className="project-image-container"
+  onClick={() => openProjectDetails(project.id)}
+>
+  <div 
+    className="project-image"
+    style={{ backgroundImage: `url(${project.image})` }}
+    role="img"
+    aria-label={project.title}
+  />
+</div>
               <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
@@ -366,9 +380,9 @@ export default function MyProjects() {
             <div className="project-modal" onClick={(e) => e.stopPropagation()}>
               <button className="modal-close" onClick={closeProjectDetails}>×</button>
               
-              <div className={`modal-header ${activeProject.image}`}>
+              <div className={`modal-header ${getModalBackgroundClass(activeProject.id)}`}>
                 <h2 className="modal-title">{activeProject.title}</h2>
-              </div>
+                </div>
               
               <div className="modal-tabs">
                 <button 
