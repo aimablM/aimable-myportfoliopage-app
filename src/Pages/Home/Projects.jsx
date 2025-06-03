@@ -83,192 +83,203 @@ export default function MyProjects() {
   };
 
   const projects = [
-    
-    {
-  id: 1,
-  title: "Secure Cloud Portfolio Infrastructure",
-  description: "Production-grade, containerized portfolio website deployed on AWS EC2 with automated CI/CD, HTTPS, and infrastructure as code.",
-  image: "terraform-bg",
-  status: "Completed",
-  tech: [
-    { name: "AWS", icon: "aws", color: "#ff9900" },
-    { name: "Terraform", icon: "terraform", color: "#7b42bc" },
-    { name: "Docker", icon: "docker", color: "#2496ed" },
-    { name: "NGINX", icon: "nginx", color: "#009639" },
-    { name: "Route 53", icon: "route53", color: "#ff9900" },
-    { name: "GitHub Actions", icon: "github", color: "#24292e" },
-    { name: "Certbot", icon: "lock", color: "#00b67a" }
-  ],
-  details: {
-    overview: "Built a secure and scalable portfolio website infrastructure from scratch using AWS, Docker, Terraform, and GitHub Actions. It features HTTPS via Certbot, automated deployments, and resilient architecture in a custom VPC.",
-    highlights: [
-      "Terraform-based infrastructure as code (IaC)",
-      "CI/CD with GitHub Actions and Docker Hub",
-      "HTTPS with automated renewal via Certbot and Let's Encrypt",
-      "Custom VPC and public subnet with hardened security groups",
-      "NGINX reverse proxy and multi-stage Docker build"
+  {
+    id: 1,
+    title: "Secure Cloud Portfolio Infrastructure",
+    description: "Production-grade, containerized portfolio website deployed on AWS EC2 with automated CI/CD, HTTPS, and infrastructure as code.",
+    image: "/img/projects/portfolio.png",
+    status: "Completed",
+    tech: [
+      { name: "AWS", icon: "aws", color: "#ff9900" },
+      { name: "Terraform", icon: "terraform", color: "#7b42bc" },
+      { name: "Docker", icon: "docker", color: "#2496ed" },
+      { name: "NGINX", icon: "nginx", color: "#009639" },
+      { name: "Route 53", icon: "route53", color: "#ff9900" },
+      { name: "GitHub Actions", icon: "github", color: "#24292e" },
+      { name: "Certbot", icon: "lock", color: "#00b67a" }
     ],
-    repoUrl: "https://github.com/aimablM/aimable-myportfoliopage-app",
-    demoUrl: "https://aimablem.dev"
-  },
-  techStack: {
-    infrastructure: ["AWS EC2", "VPC", "Security Groups", "Route 53", "Certbot", "ACM (planned)"],
-    development: ["Terraform", "Docker", "GitHub Actions", "NGINX", "React", "Bash", "AWS CLI"]
-  }
-},
-{
-      id: 2,
-      title: "CI/CD Infrastructure Automation",
-      description: "A system that integrates CI/CD pipelines using GitHub Actions to automate image builds, push to Docker Hub/ECR, and trigger EC2 redeploy via secure SSH.",
-      image: "cicd-bg",
-      status: "Completed",
-      tech: [
-        {name: "GitHub", icon: "github", color: "#24292e"},
-        {name: "Docker", icon: "docker", color: "#2496ed"},
-        {name: "AWS EC2", icon: "ec2", color: "#ff9900"},
-        {name: "Node.js", icon: "node", color: "#339933"},
-        {name: "NGINX", icon: "nginx", color: "#009639"}
+    details: {
+      overview: "Built a secure and scalable portfolio website infrastructure from scratch using AWS, Docker, Terraform, and GitHub Actions. Features HTTPS via Certbot, automated deployments, and resilient architecture in a custom VPC with complete infrastructure as code implementation.",
+      highlights: [
+        "Terraform-based infrastructure as code (IaC) for AWS resource provisioning",
+        "CI/CD pipeline with GitHub Actions and Docker Hub integration",
+        "HTTPS with automated SSL certificate renewal via Certbot and Let's Encrypt",
+        "Custom VPC and public subnet with hardened security groups",
+        "NGINX reverse proxy configuration with multi-stage Docker builds",
+        "Route 53 DNS management with domain configuration",
+        "Production-grade deployment with container restart policies"
       ],
-      details: {
-        overview: "Implemented a production-grade CI/CD pipeline that automatically builds Docker images, pushes to Amazon ECR, and securely deploys to an EC2 instance via SSH. This system powers live infrastructure for cloud-native apps, demonstrating DevOps automation and security best practices.",
-        highlights: [
-          "Automated end-to-end deployment pipeline triggered on code push to main branch",
-    "GitHub Actions workflow orchestrates build, push, and EC2 deploy using secrets",
-    "Optimized multi-stage Docker builds for smaller, production-ready images",
-    "SSH-based container lifecycle management with cleanup and zero-downtime restart",
-    "Secure secrets handling with GitHub Secrets and AWS IAM credential separation",
-    "Resolved real-world issues: ECR auth errors, SSH key formatting, and architecture mismatch"
-        ],
-        repoUrl: "https://github.com/aimablM/aws-portfolio-cicd-pipeline",
-        demoUrl: "https://github.com/aimablM/aimable-myportfoliopage-app/actions"
-      },
-      techStack: {
-        infrastructure: ["Docker", "Terraform", "EC2", "NGINX", "Route 53"],
-        development: ["HTTPS", "Bash", "YAML", "JavaScript"]
-      }
+      repoUrl: "https://github.com/aimablM/aimable-myportfoliopage-app",
+      demoUrl: "https://aimablem.dev"
     },
-    {
-      id: 3,
-      title: "Cloud Monitoring & Observability",
-      description: "Comprehensive monitoring solution for cloud infrastructure using Prometheus, Grafana, and ELK stack with custom alerts and dashboards.",
-      image: "monitor-bg",
-      status: "In Progress",
-      tech: [
-        {name: "Prometheus", icon: "prom", color: "#e6522c"},
-        {name: "Grafana", icon: "grafana", color: "#f46800"},
-        {name: "AWS CloudWatch", icon: "cloudwatch", color: "#ff9900"},
-        {name: "Python", icon: "python", color: "#3776ab"},
-        {name: "Terraform", icon: "terraform", color: "#7b42bc"}
-      ],
-      details: {
-        overview: "Built a complete observability platform for AWS infrastructure with real-time monitoring, logging, and alerting capabilities.",
-        highlights: [
-          "Custom Grafana dashboards for business and technical KPIs",
-          "Log aggregation with ELK stack",
-          "Automated alerting with PagerDuty integration",
-          "Real-time metrics visualization"
-        ],
-        repoUrl: "https://github.com/aimablM/cloud-monitoring-stack",
-        demoUrl: "https://monitoring.aimablemugwane.com"
-      },
-      techStack: {
-        infrastructure: ["Prometheus", "Grafana", "Elasticsearch", "Logstash", "Kibana"],
-        development: ["Docker Compose", "AWS CloudWatch", "Terraform", "Python"]
-      }
-    },
-    {
-  id: 4,
-  title: "Multi-Environment CI/CD Pipeline",
-  description: "A robust CI/CD system that deploys Dockerized apps across development, staging, and production environments using GitHub Actions, AWS ECR, EC2, and NGINX with secure SSL and subdomain routing.",
-  image: "security-bg",
-  status: "Completed",
-  tech: [
-    { name: "GitHub", icon: "github", color: "#24292e" },
-    { name: "Docker", icon: "docker", color: "#2496ed" },
-    { name: "AWS EC2", icon: "ec2", color: "#ff9900" },
-    { name: "AWS ECR", icon: "aws", color: "#ff9900" },
-    { name: "NGINX", icon: "nginx", color: "#009639" },
-    { name: "Terraform", icon: "terraform", color: "#7b42bc" }
-  ],
-  details: {
-    overview: "Designed and deployed a full-scale, production-grade multi-environment CI/CD pipeline. Each GitHub branch (develop, staging, main) automatically triggers a unique Docker build, pushes to ECR with a matching tag (:dev, :staging, :latest), and deploys to its corresponding container on EC2. Subdomain-based routing (dev., staging., prod.) is handled by NGINX with SSL managed by Let's Encrypt.",
-    highlights: [
-      "Isolated development, staging, and production pipelines via branch-based GitHub Actions",
-      "Separate Docker tags and containers for each environment with clear port mappings",
-      "Subdomain routing with NGINX reverse proxy for real-world deployment simulation",
-      "SSL certificate provisioning for each environment using Certbot & Let's Encrypt",
-      "Route 53 DNS configuration with wildcard support for dev/staging subdomains",
-      "Secured SSH deployments using GitHub Secrets and Docker lifecycle management",
-      "Detailed documentation and live environment testing across three branches"
-    ],
-    repoUrl: "https://github.com/aimablM/aimable-myportfoliopage-app",
-    demoUrl: "https://aimablem.dev"
-  },
-  techStack: {
-    infrastructure: ["Docker", "GitHub Actions", "EC2", "ECR", "NGINX", "Route 53", "Let's Encrypt"],
-    development: ["Bash", "YAML", "JavaScript", "React"]
-  }
-}
-,
-    {
-      id: 5,
-      title: "AWS Cost Optimization",
-      description: "Reduced AWS infrastructure costs by 40% through resource optimization, spot instances, and automated scaling policies.",
-      image: "cost-bg",
-      status: "Completed",
-      tech: [
-        {name: "AWS", icon: "aws", color: "#ff9900"},
-        {name: "Lambda", icon: "lambda", color: "#ff9900"},
-        {name: "CloudWatch", icon: "cloudwatch", color: "#ff9900"},
-        {name: "Terraform", icon: "terraform", color: "#7b42bc"},
-        {name: "Python", icon: "python", color: "#3776ab"}
-      ],
-      details: {
-        overview: "Implemented a comprehensive cost optimization strategy for AWS infrastructure with automated scaling, resource management, and cost analytics.",
-        highlights: [
-          "Resource rightsizing based on utilization metrics",
-          "Spot instance integration for non-critical workloads",
-          "Reserved Instance planning and purchase strategy",
-          "Cost anomaly detection with automated alerts"
-        ],
-        repoUrl: "https://github.com/aimablM/aws-cost-optimization",
-        demoUrl: "https://cost-demo.aimablemugwane.com"
-      },
-      techStack: {
-        infrastructure: ["AWS Lambda", "CloudWatch", "AWS Cost Explorer", "AWS Budgets"],
-        development: ["Python", "Terraform", "AWS CLI", "CloudFormation"]
-      }
-    },
-    {
-      id: 6,
-      title: "Kubernetes Cluster Automation",
-      description: "Automated Kubernetes cluster deployment and management with GitOps workflow and infrastructure as code.",
-      image: "kubernetes-bg",
-      status: "In Progress",
-      tech: [
-        {name: "Kubernetes", icon: "k8s", color: "#326ce5"},
-        {name: "AWS EKS", icon: "eks", color: "#ff9900"},
-        {name: "Terraform", icon: "terraform", color: "#7b42bc"},
-        {name: "Docker", icon: "docker", color: "#2496ed"},
-        {name: "Python", icon: "python", color: "#3776ab"}
-      ],
-      details: {
-        overview: "Created a fully automated Kubernetes cluster deployment and management solution with GitOps principles and infrastructure as code.",
-        highlights: [
-          "GitOps workflow with ArgoCD",
-          "Infrastructure as code with Terraform",
-          "Helm charts for application deployment",
-          "Automated scaling and self-healing"
-        ],
-        repoUrl: "https://github.com/aimablM/kubernetes-automation",
-        demoUrl: "https://k8s-demo.aimablemugwane.com"
-      },
-      techStack: {
-        infrastructure: ["Kubernetes", "AWS EKS", "ArgoCD", "Helm", "Terraform"],
-        development: ["YAML", "Bash", "Go", "Python", "JavaScript"]
-      }
+    techStack: {
+      infrastructure: ["AWS EC2", "VPC", "Security Groups", "Route 53", "Certbot", "Let's Encrypt"],
+      development: ["Terraform", "Docker", "GitHub Actions", "NGINX", "React", "Bash", "AWS CLI"]
     }
-  ];
+  },
+  {
+    id: 2,
+    title: "Multi-Environment CI/CD Pipeline",
+    description: "Enterprise-grade CI/CD system deploying Dockerized apps across dev, staging, and production environments with GitHub Actions, AWS ECR, and NGINX subdomain routing.",
+    image: "/img/projects/multi-env-cicd.png",
+    status: "Completed",
+    tech: [
+      { name: "GitHub Actions", icon: "github", color: "#24292e" },
+      { name: "Docker", icon: "docker", color: "#2496ed" },
+      { name: "AWS ECR", icon: "aws", color: "#ff9900" },
+      { name: "AWS EC2", icon: "ec2", color: "#ff9900" },
+      { name: "NGINX", icon: "nginx", color: "#009639" }
+    ],
+    details: {
+      overview: "Designed and deployed a full-scale, production-grade multi-environment CI/CD pipeline. Each GitHub branch (develop, staging, main) automatically triggers environment-specific Docker builds, pushes to ECR with matching tags, and deploys to dedicated containers with subdomain routing via NGINX and SSL management.",
+      highlights: [
+        "Isolated development, staging, and production pipelines via branch-based GitHub Actions",
+        "Environment-specific Docker tags (:dev, :staging, :latest) with separate container instances",
+        "Subdomain routing (dev.*, staging.*, prod.*) with NGINX reverse proxy configuration",
+        "Individual SSL certificate provisioning for each environment using Certbot & Let's Encrypt",
+        "Route 53 DNS with wildcard support for flexible subdomain management",
+        "Secured SSH deployments using GitHub Secrets and automated container lifecycle management",
+        "Production-grade deployment patterns with zero-downtime container replacement"
+      ],
+      repoUrl: "https://github.com/aimablM/multi-env-cloud-cicd-pipeline",
+      demoUrl: "https://github.com/aimablM/aimable-myportfoliopage-app/actions"
+    },
+    techStack: {
+      infrastructure: ["Docker", "GitHub Actions", "AWS ECR", "AWS EC2", "NGINX", "Route 53", "Let's Encrypt"],
+      development: ["Bash", "YAML", "JavaScript", "React", "SSH", "Git Workflow"]
+    }
+  },
+  {
+    id: 3,
+    title: "FlashLearn - Cloud-Powered Learning Platform",
+    description: "DevOps showcase: containerized microservices learning platform with Docker Compose orchestration, AWS deployment, and complete CI/CD automation.",
+    image: "/img/projects/flashlearn.png",
+    status: "Completed",
+    tech: [
+      { name: "Docker", icon: "docker", color: "#2496ed" },
+      { name: "AWS", icon: "aws", color: "#ff9900" },
+      { name: "NGINX", icon: "nginx", color: "#009639" },
+      { name: "MongoDB", icon: "database", color: "#4ea94b" },
+      { name: "Node.js", icon: "node", color: "#339933" },
+      { name: "GitHub Actions", icon: "github", color: "#24292e" }
+    ],
+    details: {
+      overview: "A comprehensive DevOps showcase demonstrating modern cloud infrastructure deployment and containerization practices. This interactive flashcard learning application is fully orchestrated with Docker Compose, deployed on AWS, and automated with a complete CI/CD pipeline featuring microservices architecture.",
+      highlights: [
+        "Containerized microservices with separate frontend, backend, and database services",
+        "Infrastructure as Code with Docker Compose for consistent deployments",
+        "Complete GitHub Actions CI/CD pipeline for automated building, testing, and deployment",
+        "AWS cloud architecture with EC2 deployment and proper security groups",
+        "Custom domain management with Route 53 and subdomain configuration",
+        "HTTPS implementation with Let's Encrypt certificates and NGINX configuration",
+        "High availability with container health checks and automated restart policies"
+      ],
+      repoUrl: "https://github.com/aimablM/flashlearn",
+      demoUrl: "https://flashlearn.aimablem.dev"
+    },
+    techStack: {
+      infrastructure: ["Docker Compose", "AWS EC2", "Route 53", "NGINX", "Let's Encrypt", "MongoDB"],
+      development: ["Node.js", "React", "GitHub Actions", "Docker Hub", "JWT", "RESTful API"]
+    }
+  },
+  {
+    id: 4,
+    title: "Forever Store - E-Commerce Platform",
+    description: "Containerized, cloud-deployed e-commerce application showcasing modern DevOps practices with Docker, AWS, and automated infrastructure deployment.",
+    image: "/img/projects/forever.png",
+    status: "Completed",
+    tech: [
+      { name: "Docker", icon: "docker", color: "#2496ed" },
+      { name: "AWS", icon: "aws", color: "#ff9900" },
+      { name: "NGINX", icon: "nginx", color: "#009639" },
+      { name: "MongoDB", icon: "database", color: "#4ea94b" },
+      { name: "Node.js", icon: "node", color: "#339933" },
+      { name: "React", icon: "javascript", color: "#61dafb" }
+    ],
+    details: {
+      overview: "A containerized, cloud-deployed e-commerce application demonstrating the full lifecycle of forking an open-source application, containerizing its components, and deploying to production with proper cloud engineering practices. Features complete separation of concerns with isolated containers and subdomain routing.",
+      highlights: [
+        "Containerized microservices with separate frontend, backend, and database containers",
+        "Docker Compose orchestration with proper networking and volume management",
+        "AWS cloud deployment on EC2 with security groups and networking configuration",
+        "HTTPS security implementation with SSL/TLS via Let's Encrypt certificates",
+        "NGINX reverse proxy with subdomain routing and SSL termination",
+        "Custom domain integration with AWS Route 53 for DNS management",
+        "Production-grade container management with restart policies and health monitoring"
+      ],
+      repoUrl: "https://github.com/aimablM/forever-store-deployment",
+      demoUrl: "https://forever.aimablem.dev"
+    },
+    techStack: {
+      infrastructure: ["Docker Compose", "AWS EC2", "Route 53", "NGINX", "Let's Encrypt", "MongoDB"],
+      development: ["React", "Node.js", "Express.js", "Cloudinary", "Stripe", "JWT", "Multer"]
+    }
+  },
+  {
+    id: 5,
+    title: "Prometheus & Grafana Monitoring Stack",
+    description: "Comprehensive, containerized monitoring solution with Prometheus, Grafana, and custom exporters for real-time infrastructure visibility and alerting.",
+    image: "/img/projects/monitor.png",
+    status: "Completed",
+    tech: [
+      { name: "Prometheus", icon: "prom", color: "#e6522c" },
+      { name: "Grafana", icon: "grafana", color: "#f46800" },
+      { name: "Docker", icon: "docker", color: "#2496ed" },
+      { name: "Node Exporter", icon: "server", color: "#339933" },
+      { name: "cAdvisor", icon: "docker", color: "#2496ed" }
+    ],
+    details: {
+      overview: "A comprehensive, containerized monitoring solution for quickly deploying a complete server monitoring environment using industry-standard tools. This stack provides real-time visibility into infrastructure with minimal setup time, featuring Prometheus for metrics collection, Grafana for visualization, and multiple exporters for comprehensive monitoring.",
+      highlights: [
+        "Complete monitoring stack with Prometheus, Grafana, Node Exporter, and cAdvisor",
+        "Real-time metrics collection for CPU, memory, disk, and network statistics",
+        "Customizable Grafana dashboards with pre-configured templates for system overview",
+        "Container monitoring with cAdvisor for Docker resource usage and performance data",
+        "Automated alerting system with configurable thresholds and notification channels",
+        "Long-term metrics storage and retention for trend analysis and capacity planning",
+        "Docker Compose orchestration for consistent deployment across environments"
+      ],
+      repoUrl: "https://github.com/aimablM/monitoring-stack", 
+      demoUrl: "https://monitor.aimablem.dev"
+    },
+    techStack: {
+      infrastructure: ["Prometheus", "Grafana", "Docker Compose", "Node Exporter", "cAdvisor", "AlertManager"],
+      development: ["YAML", "PromQL", "Grafana Dashboards", "Docker", "Monitoring Configuration"]
+    }
+  },
+  {
+    id: 6,
+    title: "AWS ECR CI/CD Pipeline",
+    description: "Production-grade CI/CD pipeline automating containerized application deployment from GitHub to Amazon ECR and EC2 with comprehensive error handling.",
+    image: "/img/projects/portfolio-cicd.png",
+    status: "Completed",
+    tech: [
+      { name: "GitHub Actions", icon: "github", color: "#24292e" },
+      { name: "AWS ECR", icon: "aws", color: "#ff9900" },
+      { name: "Docker", icon: "docker", color: "#2496ed" },
+      { name: "AWS EC2", icon: "ec2", color: "#ff9900" },
+      { name: "SSH", icon: "terminal", color: "#4b5563" }
+    ],
+    details: {
+      overview: "A production-grade CI/CD pipeline implementation that automatically builds, pushes, and deploys containerized applications from GitHub to Amazon ECR and EC2. Demonstrates modern DevOps practices including containerization, automation, security, and systematic troubleshooting of real-world deployment challenges.",
+      highlights: [
+        "End-to-end automation from code push to production deployment",
+        "Amazon ECR integration for secure container image storage and management",
+        "SSH-based deployment with secure credential management via GitHub Secrets",
+        "Comprehensive error handling and systematic debugging of production issues",
+        "Cross-platform Docker builds ensuring compatibility between development and production",
+        "Container lifecycle management with graceful stopping, removal, and redeployment",
+        "Documented troubleshooting process for common deployment challenges"
+      ],
+      repoUrl: "https://github.com/aimablM/aws-portfolio-cicd-pipeline",
+      demoUrl: "https://aimablem.dev"
+    },
+    techStack: {
+      infrastructure: ["Amazon ECR", "AWS EC2", "Docker", "SSH", "GitHub Actions"],
+      development: ["YAML", "Bash", "AWS CLI", "Docker CLI", "GitHub Secrets"]
+    }
+  }
+];
 
   return (
     <section id="Projects" className="projects-section">
@@ -299,7 +310,11 @@ export default function MyProjects() {
                 className={`project-image-container`}
                 onClick={() => openProjectDetails(project.id)}
               >
-                <div className={`project-image ${project.image}`}></div>
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="project-image"
+                />
               </div>
               <div className="project-content">
                 <h3 className="project-title">{project.title}</h3>
