@@ -1,0 +1,713 @@
+/* Import Font if you don't have it already in your main CSS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Projects Section Styling */
+#Projects.projects-section {
+  padding: 30px;
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+
+#Projects .projects-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  flex: 1;
+}
+
+/* Centered section title with repositioned View All button */
+#Projects .section-header {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+#Projects .section-heading {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #0f2942;
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+#Projects .section-icon {
+  color: #2563eb;
+  font-size: 1.75rem;
+}
+
+#Projects .view-all-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.6rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 5px rgba(37, 99, 235, 0.3);
+}
+
+#Projects .view-all-btn:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.4);
+}
+
+#Projects .section-description {
+  color: #4b5563;
+  font-size: 1.05rem;
+  text-align: center;
+  margin-bottom: 1.7rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6s;
+}
+
+#Projects .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Project Card - More compact */
+#Projects .project-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 320px; /* Reduced height */
+  max-height: 350px; /* Reduced max height */
+}
+
+#Projects .project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(15, 41, 66, 0.2);
+}
+
+/* Project Status */
+#Projects .project-status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+}
+
+#Projects .status-completed,
+#Projects .status-progress {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+#Projects .status-completed {
+  background-color: rgba(219, 234, 254, 0.9);
+  color: #2563eb;
+  border: 1px solid #93c5fd;
+}
+
+#Projects .status-progress {
+  background-color: rgba(255, 237, 213, 0.9);
+  color: #f97316;
+  border: 1px solid #fdba74;
+}
+
+/* Project Image - Updated to use background-image for proper cropping */
+#Projects .project-image-container {
+  height: 140px; /* Keep existing height */
+  overflow: hidden;
+  cursor: pointer;
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  position: relative;
+}
+
+#Projects .project-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* This will crop/scale to fill while maintaining aspect ratio */
+  background-position: center top; /* Show top portion of image, centered horizontally */
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease;
+}
+
+#Projects .project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+/* Background images for projects */
+#Projects .cicd-bg,
+.modal-header.cicd-bg {
+  background-image: linear-gradient(rgba(15, 41, 66, 0.7), rgba(15, 41, 66, 0.7)), 
+                    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>');
+  background-size: 50px;
+  background-repeat: repeat;
+  background-color: #2563eb;
+}
+
+#Projects .terraform-bg,
+.modal-header.terraform-bg {
+  background-image: linear-gradient(rgba(15, 41, 66, 0.7), rgba(15, 41, 66, 0.7)), 
+                    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="6" height="6"></rect><rect x="14" y="6" width="6" height="6"></rect><rect x="2" y="14" width="6" height="6"></rect><rect x="14" y="14" width="6" height="6"></rect></svg>');
+  background-size: 50px;
+  background-repeat: repeat;
+  background-color: #60a5fa;
+}
+
+#Projects .monitor-bg,
+.modal-header.monitor-bg {
+  background-image: linear-gradient(rgba(15, 41, 66, 0.7), rgba(15, 41, 66, 0.7)), 
+                    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>');
+  background-size: 50px;
+  background-repeat: repeat;
+  background-color: #10b981;
+}
+
+#Projects .security-bg,
+.modal-header.security-bg {
+  background-image: linear-gradient(rgba(15, 41, 66, 0.7), rgba(15, 41, 66, 0.7)), 
+                    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>');
+  background-size: 50px;
+  background-repeat: repeat;
+  background-color: #9333EA;
+}
+
+#Projects .cost-bg,
+.modal-header.cost-bg {
+  background-image: linear-gradient(rgba(15, 41, 66, 0.7), rgba(15, 41, 66, 0.7)), 
+                    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>');
+  background-size: 50px;
+  background-repeat: repeat;
+  background-color: #FF9800;
+}
+
+#Projects .kubernetes-bg,
+.modal-header.kubernetes-bg {
+  background-image: linear-gradient(rgba(15, 41, 66, 0.7), rgba(15, 41, 66, 0.7)), 
+                    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>');
+  background-size: 50px;
+  background-repeat: repeat;
+  background-color: #326CE5;
+}
+
+/* More compact card content */
+#Projects .project-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #ffffff;
+}
+
+#Projects .project-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: #0f2942;
+  line-height: 1.3;
+  text-align: left; /* Add this line to left align the title */
+}
+
+#Projects .project-description {
+  color: #4b5563;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Limit to 2 lines to save space */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Project Technologies - More compact */
+#Projects .project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+
+#Projects .tech-tag {
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+#Projects .tech-tag-name {
+  display: none; /* Hide names on smaller screens */
+}
+
+/* Project Links - More compact */
+#Projects .project-links {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+#Projects .project-link-btn {
+  padding: 0.35rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+#Projects .view-details {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+}
+
+#Projects .view-details:hover {
+  background-color: #1d4ed8;
+}
+
+#Projects .github-repo,
+#Projects .live-demo {
+  background-color: transparent;
+  color: #0f2942;
+  border: 1px solid #0f2942;
+}
+
+#Projects .github-repo:hover,
+#Projects .live-demo:hover {
+  background-color: rgba(15, 41, 66, 0.05);
+}
+
+#Projects .link-icon {
+  font-size: 0.8rem;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.project-modal {
+  background-color: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
+  height: 90vh;
+  max-height: 600px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #0f2942;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: #ffffff;
+  transform: scale(1.1);
+}
+
+/* Modal Header */
+.modal-header {
+  height: 25%;
+  min-height: 150px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.modal-title {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+/* Modal Tabs */
+.modal-tabs {
+  display: flex;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: white;
+  padding: 0;
+}
+
+.modal-tab {
+  padding: 0.8rem 1.2rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modal-tab i {
+  font-size: 1rem;
+}
+
+.modal-tab.active {
+  color: #2563eb;
+  border-bottom-color: #2563eb;
+  font-weight: 600;
+}
+
+.modal-tab:hover:not(.active) {
+  color: #3b82f6;
+}
+
+/* Modal Content */
+.modal-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.tab-content {
+  height: 100%;
+}
+
+.modal-overview {
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Highlights section */
+.highlights-section {
+  margin-bottom: 1.5rem;
+}
+
+.highlights-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0f2942;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.highlights-title i {
+  color: #2563eb;
+}
+
+.highlights-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.highlights-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+.highlights-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0.5rem;
+  color: #2563eb;
+  font-size: 1.2rem;
+}
+
+/* Tech Stack Tab */
+.tech-stack-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.tech-column {
+  flex: 1;
+}
+
+.tech-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0f2942;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tech-title i {
+  color: #2563eb;
+}
+
+.tech-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.375rem;
+  background-color: rgba(243, 244, 246, 0.5);
+  transition: all 0.2s ease;
+}
+
+.tech-item:hover {
+  background-color: rgba(243, 244, 246, 0.8);
+  transform: translateX(3px);
+}
+
+.tech-item i {
+  font-size: 1.2rem;
+  width: 1.5rem;
+  text-align: center;
+}
+
+.tech-name {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+/* Modal Footer with buttons aligned to bottom left */
+.modal-footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 1.25rem;
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.modal-actions .project-link-btn {
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.modal-actions .github-repo {
+  background-color: #24292e;
+  color: white;
+  border: none;
+}
+
+.modal-actions .github-repo:hover {
+  background-color: #1b2026;
+  transform: translateY(-2px);
+}
+
+.modal-actions .live-demo {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+}
+
+.modal-actions .live-demo:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  /* Show tech tag names on tablet and up */
+  #Projects .tech-tag-name {
+    display: inline;
+  }
+  
+  /* More spacing between tech tags */
+  #Projects .project-tech {
+    gap: 0.4rem;
+  }
+  
+  /* Larger project link buttons */
+  #Projects .project-link-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  /* 2 columns on tablets */
+  #Projects .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Slightly taller project cards to fit content */
+  #Projects .project-card {
+    min-height: 300px;
+    max-height: 340px;
+  }
+  
+  /* Single column tech stack on smaller screens */
+  .tech-stack-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Single column on mobile */
+  #Projects .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Header column on mobile */
+  #Projects .section-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+  
+  #Projects .view-all-btn {
+    position: static;
+    margin-top: 1rem;
+  }
+  
+  /* Smaller heading on mobile */
+  #Projects .section-heading {
+    font-size: 1.8rem;
+  }
+  
+  /* Smaller project titles on mobile */
+  #Projects .project-title {
+    font-size: 1rem;
+  }
+  
+  /* Smaller modal title on mobile */
+  .modal-title {
+    font-size: 1.5rem;
+  }
+  
+  /* Modal buttons stack on mobile */
+  .modal-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+/* Print styles for resume-friendly output */
+@media print {
+  #Projects.projects-section {
+    padding: 1rem 0;
+  }
+  
+  #Projects .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  #Projects .project-card {
+    box-shadow: none;
+    border: 1px solid #e5e7eb;
+  }
+  
+  #Projects .project-status,
+  #Projects .view-all-btn {
+    display: none;
+  }
+}

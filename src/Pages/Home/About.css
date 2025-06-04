@@ -1,0 +1,396 @@
+/* About.css - Clean and professional CSS for the About section */
+
+/* ===============================================
+   MAIN SECTION CONTAINER
+   =============================================== */
+   .about-section {
+    /* Full viewport height */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Remove padding to take full viewport */
+    background-color: #ffffff;
+    position: relative;
+    border-bottom: 1px solid rgba(15, 41, 66, 0.1);
+    /* Match the styling from other sections */
+  }
+  
+  .about-container {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    max-width: 100%; /* Use full width */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    /* No gap here - we want to maximize space */
+  }
+  
+  /* ===============================================
+     HEADER STYLING
+     =============================================== */
+  .about-header {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #0f2942; /* Match the blue from hero section */
+    color: white;
+    width: 100%;
+  }
+  
+  .about-subtitle {
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: #60a5fa; /* Match the blue from hero section */
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff; /* White for contrast on dark background */
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .about-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    background-color: #60a5fa; /* Match the blue from hero section */
+    border-radius: 4px;
+  }
+  
+  /* ===============================================
+     CONTENT LAYOUT - TWO COLUMN
+     =============================================== */
+  .about-content {
+    display: flex;
+    flex-direction: column; /* Mobile first design */
+    flex: 1; /* Take remaining space */
+    min-height: calc(100vh - 100px); /* Minimum height instead of fixed */
+    height: auto; /* Allow content to expand */
+  }
+  
+  /* ===============================================
+     LEFT COLUMN - IMAGE AND CREDENTIALS
+     =============================================== */
+  .about-left-column {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff; /* Clean white background */
+    padding: 2rem;
+    /* On mobile, no fixed height */
+  }
+  
+  /* Right column - Text content */
+  .about-right-column {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: #ffffff;
+    overflow-y: auto; /* Allow scrolling if content is too long */
+    /* On mobile, no fixed height */
+  }
+  
+  /* ===============================================
+     IMAGE STYLING
+     =============================================== */
+  .about-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0rem;
+  }
+  
+  .about-image {
+    max-width: 90%; /* Reduced from 100% to make image smaller */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0);
+    transition: transform 0.3s ease;
+    /* Removed border and outline */
+  }
+  
+  .about-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 12px 12px -5px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* ===============================================
+     TEXT CONTENT STYLING
+     =============================================== */
+  .about-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  /* First paragraph styling */
+  .about-description:first-of-type {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #0f2942;
+  }
+  
+  /* Last paragraph styling */
+  .about-description:last-of-type {
+    margin-bottom: 0;
+  }
+  
+  /* ===============================================
+     CREDENTIALS SECTION STYLING
+     =============================================== */
+  .about-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  /* ===============================================
+     CREDENTIAL ITEM STYLING
+     =============================================== */
+  .credential-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .credential-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .credential-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #e6f0ff;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  
+  .credential-icon i {
+    font-size: 1.25rem;
+    color: #2563eb;
+  }
+  
+  .credential-content {
+    flex: 1;
+  }
+  
+  .credential-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #0f2942;
+    margin-bottom: 0.4rem;
+  }
+  
+  .credential-text {
+    font-size: 0.95rem;
+    color: #4b5563;
+    margin-bottom: 0.2rem;
+  }
+  
+  .credential-subtext {
+    font-size: 0.85rem;
+    color: #6b7280;
+    font-style: italic;
+  }
+  
+  /* ===============================================
+     CERTIFICATION BADGE PLACEHOLDER
+     =============================================== */
+  .cert-badge-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .cert-badge-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 110px; /* Reduced size */
+    height: 110px; /* Reduced size */
+    background: #ffffff;
+    border-radius: 50%;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease;
+  }
+  
+  .cert-badge-placeholder:hover {
+    transform: scale(1.05);
+  }
+  
+  .cert-badge-placeholder i {
+    font-size: 2.75rem;
+    color: #ff9900; /* AWS orange */
+    margin-bottom: 0.5rem;
+  }
+  
+  .cert-badge-placeholder span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #0f2942;
+    text-align: center;
+  }
+
+  .cert-badge-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.cert-badge-image {
+  width: 140px;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.cert-badge-image:hover {
+  transform: scale(1.05);
+}
+
+  
+  /* ===============================================
+     RESPONSIVE DESIGN
+     =============================================== */
+  /* ===============================================
+     TABLET AND DESKTOP LAYOUT
+     =============================================== */
+  @media (min-width: 768px) {
+    .about-container {
+      height: auto;
+      min-height: 100vh;
+    }
+  
+    .about-content {
+      flex-direction: row;
+      min-height: calc(100vh - 100px);
+      height: auto;
+    }
+    
+    .about-left-column {
+      flex: 1; /* Takes 1/3 of space */
+      height: auto;
+      min-height: 100%;
+      overflow-y: auto;
+      /* Removed border */
+    }
+    
+    .about-right-column {
+      flex: 2; /* Takes 2/3 of space */
+      height: auto;
+      min-height: 100%;
+      padding-top: 4rem; /* Added top padding to center content vertically */
+    }
+    
+    .about-title {
+      font-size: 2.75rem;
+    }
+    
+    .about-description {
+      font-size: 1.1rem;
+    }
+    
+    .about-description:first-of-type {
+      font-size: 1.25rem;
+    }
+  }
+  
+  /* Large desktop */
+  @media (min-width: 1280px) {
+    .about-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    
+    .about-title {
+      font-size: 3rem;
+    }
+    
+    .about-image {
+      max-width: 85%;
+    }
+    
+    .about-left-column,
+    .about-right-column {
+      padding: 3rem;
+    }
+  }
+  
+  /* Mobile (small screens) - Mobile first layout is already defined above */
+  @media (max-width: 640px) {
+    .about-section {
+      min-height: auto; /* Allow the content to determine height */
+    }
+    
+    .about-container {
+      height: auto;
+    }
+    
+    .about-content {
+      height: auto;
+      flex-direction: column; /* Already defined, but keeping for clarity */
+    }
+    
+    .about-header {
+      padding: 1.5rem 0;
+    }
+    
+    .about-title {
+      font-size: 2rem;
+    }
+    
+    .about-subtitle {
+      font-size: 1rem;
+    }
+    
+    .about-description {
+      font-size: 1rem;
+    }
+    
+    .about-left-column,
+    .about-right-column {
+      padding: 1.5rem;
+    }
+    
+    .credential-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .credential-icon {
+      margin-bottom: 0.5rem;
+    }
+    
+    .cert-badge-placeholder {
+      width: 110px;
+      height: 110px;
+    }
+    
+    .cert-badge-placeholder i {
+      font-size: 2.25rem;
+    }
+  }
