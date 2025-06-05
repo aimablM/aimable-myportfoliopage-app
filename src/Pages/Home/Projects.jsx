@@ -300,7 +300,7 @@ export default function MyProjects() {
         <div className="section-header">
           <h2 className="section-heading">
             <i className="section-icon fas fa-code-branch"></i>
-            Recent Projects
+            Featured Projects
           </h2>
           <a href="https://github.com/aimablM?tab=repositories" target="_blank" rel="noopener noreferrer" className="view-all-btn">
             <i className="fab fa-github"></i> View All Projects
