@@ -55,17 +55,10 @@ function Navbar() {
     <nav className={`navbar ${navActive ? "active" : ""} ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <a href="https://aimablem.dev" className="logo-text"><img src="./img/amlogo.png" alt="AIMABLEM" className="logo-img" /></a>
+          <a href="https://aimablem.dev" className="logo-text">
+            <img src="./img/amlogo.png" alt="AIMABLEM" className="logo-img" />
+          </a>
         </div>
-        
-        <button
-          type="button"
-          className={`nav__hamburger ${navActive ? "active" : ""}`}
-          onClick={toggleNav}
-          aria-label="Toggle navigation menu"
-        >
-          <i className={`fas ${navActive ? "fa-times" : "fa-bars"}`}></i>
-        </button>
         
         <div className={`navbar--items ${navActive ? "active" : ""}`}>
           <ul>
@@ -129,8 +122,6 @@ function Navbar() {
               </Link>
             </li>
             
-            
-            
             <li>
               <Link
                 onClick={closeMenu}
@@ -174,6 +165,16 @@ function Navbar() {
             Contact Me
           </Link>
         </div>
+
+        {/* Moved hamburger button to the end for proper positioning */}
+        <button
+          type="button"
+          className={`nav__hamburger ${navActive ? "active" : ""}`}
+          onClick={toggleNav}
+          aria-label="Toggle navigation menu"
+        >
+          <i className={`fas ${navActive ? "fa-times" : "fa-bars"}`}></i>
+        </button>
       </div>
     </nav>
   );
