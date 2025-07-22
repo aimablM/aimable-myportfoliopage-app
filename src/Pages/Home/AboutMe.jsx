@@ -40,30 +40,12 @@ export default function AboutMe() {
                 </div>
                 <div className="credential-content">
                   <h3 className="credential-title">Certifications</h3>
-                  <p className="credential-text">AWS Cloud Practitioner</p>
                   <p className="credential-text">Comptia Security+</p>
-                  <p className="credential-subtext">Pursuing: AWS Solutions Architect- Associate, Terraform Associate</p>
+                  <p className="credential-text">AWS Cloud Practitioner</p>
+                  <p className="credential-text">AWS Solutions Architect- Associate</p>
+                  <p className="credential-text">Terraform Associate</p>
+                  <p className="credential-subtext">Pursuing: AWS Certified Developer - Associate</p>
                 </div>
-              </div>
-              
-              {/* Certification badge placeholder */}
-              <div className="cert-badge-container">
-                <img
-                onClick={() => {
-                              window.open("./AWS_Certified_Cloud_Practitioner.pdf", '_blank', 'noopener noreferrer')
-                            }}
-                  src="./img/aws-ccp.png"
-                  alt="AWS Certified Cloud Practitioner"
-                  className="cert-badge-image"
-                />
-                <img
-                  onClick={() => {
-                              window.open("./CompTIA_Security+_CE.pdf", '_blank', 'noopener noreferrer')
-                            }}
-                  src="./img/security-plus.png"
-                  alt="CompTIA Security+ Certified"
-                  className="cert-badge-image"
-                />
               </div>
             </div>
           </div>
@@ -85,6 +67,43 @@ export default function AboutMe() {
             <p className="about-description">
               Cloud and DevOps blend everything I love: infrastructure, automation, security, creativity, and impact. It's less saturated, highly in demand, and rewards those who can bridge software with systems — and that's where I thrive. I'm not just following a path — I'm creating one. And I'm just getting started.
             </p>
+
+          {/* Certification badge placeholder */}
+            <div className="cert-badge-container">
+                <img
+                  onClick={() => {
+                              window.open("./CompTIA_Security+_CE.pdf", '_blank', 'noopener noreferrer')
+                            }}
+                  src="./img/security-plus.png"
+                  alt="CompTIA Security+ Certified"
+                  className="cert-badge-image"
+                />
+                <img
+                onClick={() => {
+                              window.open("./AWS_Certified_Cloud_Practitioner.pdf", '_blank', 'noopener noreferrer')
+                            }}
+                  src="./img/aws-ccp.png"
+                  alt="AWS Certified Cloud Practitioner"
+                  className="cert-badge-image"
+                />
+                <img
+                  onClick={() => {
+                              window.open("./AWS_Certified_Solutions_Architect.pdf", '_blank', 'noopener noreferrer')
+                            }}
+                  src="./img/aws-certified-solutions-architect-associate.png"
+                  alt="AWS Certified Solutions Architect - Associate"
+                  className="cert-badge-image"
+                />
+                <img
+                  onClick={() => {
+                              window.open("./TerraformAssociate00320250716-27-5e9c2p.pdf", '_blank', 'noopener noreferrer')
+                            }}
+                  src="./img/terraform.png"
+                  alt="Terraform Associate Certified"
+                  className="cert-badge-image"
+                />
+              </div>
+            
           </div>
         </div>
       </div>
