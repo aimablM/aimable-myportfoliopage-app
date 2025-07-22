@@ -105,22 +105,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0rem;
+    margin-bottom: -2rem;
   }
   
   .about-image {
     max-width: 90%; /* Reduced from 100% to make image smaller */
     height: auto;
-    border-radius: 10px;
+    border-radius: 0px;
     box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0);
     transition: transform 0.3s ease;
     /* Removed border and outline */
   }
   
-  .about-image:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 12px 12px -5px rgba(0, 0, 0, 0.15);
-  }
+  /*.about-image:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.2), 0 12px 12px -5px rgba(0, 0, 0, 0.15);
+    
+  }*/
   
   /* ===============================================
      TEXT CONTENT STYLING
