@@ -99,7 +99,7 @@ export default function AboutMe() {
                               window.open("./TerraformAssociate00320250716-27-5e9c2p.pdf", '_blank', 'noopener noreferrer')
                             }}
                   src="./img/terraform.png"
-                  alt="Terraform Associate Certified"
+                  alt="Terraform Associate Certified "
                   className="cert-badge-image"
                 />
               </div>
