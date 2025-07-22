@@ -87,8 +87,6 @@ export default function AboutMe() {
             <p className="about-description">
               Cloud and DevOps blend everything I love: infrastructure, automation, security, creativity, and impact. It's less saturated, highly in demand, and rewards those who can bridge software with systems — and that's where I thrive. I'm not just following a path — I'm creating one. And I'm just getting started.
             </p>
-<<<<<<< Updated upstream
-=======
 
           {/* Certification badge placeholder */}
             <div className="cert-badge-container">
@@ -126,7 +124,6 @@ export default function AboutMe() {
                 />
               </div>
             
->>>>>>> Stashed changes
           </div>
         </div>
       </div>
