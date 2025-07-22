@@ -40,10 +40,11 @@ export default function AboutMe() {
                 </div>
                 <div className="credential-content">
                   <h3 className="credential-title">Certifications</h3>
-                  <p className="credential-text">AWS Cloud Practitioner</p>
                   <p className="credential-text">Comptia Security+</p>
+                  <p className="credential-text">AWS Cloud Practitioner</p>
                   <p className="credential-text">AWS Solutions Architect- Associate</p>
-                  <p className="credential-subtext">Pursuing:Terraform Associate</p>
+                  <p className="credential-text">Terraform Associate</p>
+                  <p className="credential-subtext">Pursuing: AWS Certified Developer - Associate</p>
                 </div>
               </div>
               
@@ -65,7 +66,6 @@ export default function AboutMe() {
                   alt="CompTIA Security+ Certified"
                   className="cert-badge-image"
                 />
-               
               </div>
             </div>
           </div>
