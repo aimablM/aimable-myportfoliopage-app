@@ -62,7 +62,7 @@ export default function AboutMe() {
             </p>
             
             <p className="about-description">
-              This journey has reignited my drive and purpose. I think in systems now, sketching out ideas at night, imagining how components connect, and constantly applying what I learn in real-world scenarios. I've earned my AWS Cloud Practitioner and Solutions Architect Associate , Security+ and Terraform Associate, and I'm building public, documented projects to show what I know and not just what I've studied.
+              This journey has reignited my drive and purpose. I think in systems now, sketching out ideas, imagining how components connect, and constantly applying what I learn in real-world scenarios. I've earned my AWS Cloud Practitioner and Solutions Architect Associate , Security+ and Terraform Associate, and I'm building public, documented projects to show what I know and not just what I've studied.
             </p>
             
             <p className="about-description">

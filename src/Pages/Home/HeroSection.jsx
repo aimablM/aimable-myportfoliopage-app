@@ -13,7 +13,7 @@ export default function HeroSection() {
             <span className="hero-title-secondary"> DevOps Engineer</span>
           </h1>
           <p className="hero-description">
-            Turning code into containers and pipelines into production. Modern applications demand more than code — they need robust, automated, and secure infrastructure. That's what I build.
+            Turning code into containers and pipelines into production. Modern applications demand more than code, they need robust, automated, and secure infrastructure. That's what I build.
           </p>
           <div className="hero-buttons">
             <Link
