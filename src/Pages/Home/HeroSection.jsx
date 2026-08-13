@@ -10,7 +10,7 @@ export default function HeroSection() {
           <h2 className="hero-subtitle">Hey, I'm Aimable</h2>
           <h1 className="hero-title">
             <span className="hero-title-primary"> Cloud</span> | 
-            <span className="hero-title-secondary"> DevOps Engineer</span>
+            <span className="hero-title-secondary"> Infrastructure Engineer</span>
           </h1>
           <p className="hero-description">
             Turning code into containers and pipelines into production. Modern applications demand more than code, they need robust, automated, and secure infrastructure. That's what I build.
