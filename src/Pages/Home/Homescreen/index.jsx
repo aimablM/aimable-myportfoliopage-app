@@ -6,9 +6,10 @@ import HeroSection from "../HeroSection";
 import MySkills from "../MySkills";
 // eslint-disable-next-line no-unused-vars
 import Projects from "../Projects";
+import Experience from "../Experience";
 //import BlogArticles from "../BlogArticles";
 import ComingSoon from "../ComingSoon";
-//import Navbar from "../Navbar"; 
+//import Navbar from "../Navbar";
 
 
 
@@ -19,6 +20,7 @@ export default function Home() {
             <MySkills />
             <AboutMe />
             <Projects />
+            <Experience />
             <ComingSoon />
             {/*< BlogArticles /> */}
             {/*< MyPortfolio /> */}
