@@ -1,183 +1,84 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-scroll";
-import "./Navbar.css"; 
+import { useEffect, useState } from "react";
+import { links } from "../../data/site";
+import { Close, Menu } from "./Icons";
 
-function Navbar() {
-  const [navActive, setNavActive] = useState(false);
+const sections = [
+  { id: "work", label: "Work" },
+  { id: "stack", label: "Stack" },
+  { id: "about", label: "About" },
+  { id: "contact", label: "Contact" },
+];
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const toggleNav = () => {
-    setNavActive(!navActive);
-  };
-
-  const closeMenu = () => {
-    setNavActive(false);
-  };
-
-  // Handle resize events
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 500) {
-        closeMenu();
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Initial menu state
   useEffect(() => {
-    if (window.innerWidth <= 1200) {
-      closeMenu();
-    }
+    const onKey = (e) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  // Add scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const close = () => setOpen(false);
 
   return (
-    <nav className={`navbar ${navActive ? "active" : ""} ${scrolled ? "scrolled" : ""}`}>
-      <div className="navbar-container">
-        <div className="navbar-logo">
-          <a href="https://aimablem.dev" className="logo-text">
-            <img src="./img/amlogo.png" alt="AIMABLEM" className="logo-img" />
+    <nav className={`nav ${scrolled ? "is-scrolled" : ""} ${open ? "is-open" : ""}`}>
+      <div className="nav__inner">
+        <a href="#top" className="nav__brand" onClick={close}>
+          <span className="nav__mark">AM</span>
+          <span className="nav__name">Aimable Mugwaneza</span>
+        </a>
+
+        <div className="nav__links" id="nav-menu">
+          {sections.map((s) => (
+            <a key={s.id} href={`#${s.id}`} onClick={close}>
+              {s.label}
+            </a>
+          ))}
+          <a
+            href={links.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nav__menu-resume"
+            onClick={close}
+          >
+            Résumé
           </a>
         </div>
-        
-        <div className={`navbar--items ${navActive ? "active" : ""}`}>
-          <ul>
-            <li>
-              <Link
-                onClick={closeMenu}
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="hero-section"
-                className="navbar--content"
-              >
-                Home
-              </Link>
-            </li>
-            
-            <li>
-              <Link
-                onClick={closeMenu}
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="skills"
-                className="navbar--content"
-              >
-                Skills
-              </Link>
-            </li>
 
-            <li>
-              <Link
-                onClick={closeMenu}
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="AboutMe"
-                className="navbar--content"
-              >
-                About Me
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                onClick={closeMenu}
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="Projects"
-                className="navbar--content"
-              >
-                Projects
-              </Link>
-            </li>
-            
-            <li>
-              <Link
-                onClick={closeMenu}
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                to="Blog"
-                className="navbar--content"
-              >
-                Blog
-              </Link>
-            </li>
-            
-            <li>
-              <Link
-                onClick={() => {
-                  closeMenu();
-                  window.open("./Aimable_Mugwaneza_Resume_2025.pdf", "_blank", "noopener,noreferrer");
-                }}
-                className="navbar--content"
-              >
-                Resume
-              </Link>
-            </li>
-          </ul>
-        </div>
-        
-        <div className="navbar-cta">
-          <Link
-            onClick={closeMenu}
-            activeClass="navbar--active-content"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            to="Contact"
-            className="btn btn-outline-primary"
+        <div className="nav__aside">
+          <span className="status">
+            <span className="status__dot" />
+            Open to Cloud / DevOps roles
+          </span>
+          <a
+            href={links.resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn--ghost btn--sm"
           >
-            Contact Me
-          </Link>
+            Résumé
+          </a>
         </div>
 
-        {/* Moved hamburger button to the end for proper positioning */}
         <button
           type="button"
-          className={`nav__hamburger ${navActive ? "active" : ""}`}
-          onClick={toggleNav}
-          aria-label="Toggle navigation menu"
+          className="nav__toggle"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="nav-menu"
+          onClick={() => setOpen((o) => !o)}
         >
-          <i className={`fas ${navActive ? "fa-times" : "fa-bars"}`}></i>
+          {open ? <Close /> : <Menu />}
         </button>
       </div>
     </nav>
   );
 }
-
-export default Navbar;
