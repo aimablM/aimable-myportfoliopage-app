@@ -1,0 +1,60 @@
+name: Deploy portfolio to S3 + CloudFront
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  id-token: write # lets the job request an OIDC token to assume the AWS role
+  contents: read
+
+concurrency:
+  group: deploy-portfolio-s3
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Configure AWS credentials (OIDC, no stored keys)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      # Hashed JS/CSS (build/static) never change content under the same name,
+      # so browsers and CloudFront can cache them for a year.
+      # No --delete: old chunks stay around so anyone holding a cached
+      # index.html mid-deploy doesn't get 404s on its JS.
+      - name: Upload hashed assets (cache 1 year)
+        run: |
+          aws s3 sync build/static "s3://${{ vars.S3_BUCKET }}/static" \
+            --cache-control "public,max-age=31536000,immutable"
+
+      # index.html, resume PDFs, images in public/ keep the same names when
+      # their content changes, so they must always be revalidated.
+      - name: Upload everything else (always revalidate)
+        run: |
+          aws s3 sync build "s3://${{ vars.S3_BUCKET }}" \
+            --delete --exclude "static/*" \
+            --cache-control "public,max-age=0,must-revalidate"
+
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*"
